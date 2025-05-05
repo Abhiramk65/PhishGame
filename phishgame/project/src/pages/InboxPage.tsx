@@ -142,7 +142,7 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
           </div>
         </div>
       ) : (
-        <div className="flex flex-col md:flex-row gap-4 h-[calc(100vh-200px)] md:h-[calc(100vh-180px)]">
+        <div className="flex flex-col md:flex-row gap-4 min-h-[calc(100vh-200px)] md:h-[calc(100vh-180px)]">
           {/* Email List - Always display on desktop, but conditionally on mobile */}
           <div className={`w-full md:w-1/3 md:block ${showEmailDetail ? 'hidden' : 'block'}`}>
             <EmailList

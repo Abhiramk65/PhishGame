@@ -163,7 +163,7 @@ const EmailDetail: React.FC<EmailDetailProps> = ({ email, onContinue }) => {
   return (
     <div 
       ref={containerRef}
-      className="w-full h-full bg-white overflow-y-auto"
+      className="w-full flex flex-col bg-white overflow-y-auto h-auto md:h-full"
     >
       {/* Email Header */}
       <div className="border-b border-gray-200 pb-4 mb-4 p-4">
@@ -248,7 +248,7 @@ const EmailDetail: React.FC<EmailDetailProps> = ({ email, onContinue }) => {
 
       {/* Condition 2: Email is selected, unread, and feedback is NOT showing -> Show Identify Buttons */}
       {email && email.unread && !gameState.feedback.show && (
-         <div className="flex flex-col px-4 pb-4 sticky bottom-0 bg-white border-t border-gray-200 pt-4">
+         <div className="flex flex-col px-4 pb-4 bg-white border-t border-gray-200 pt-4">
            <div className="flex flex-col sm:flex-row justify-between gap-4">
              <button
                onClick={() => handleIdentify(false)}

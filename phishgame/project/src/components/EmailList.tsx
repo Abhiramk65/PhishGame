@@ -73,11 +73,6 @@ const EmailList: React.FC<EmailListProps> = ({ emails, selectedEmailId, onSelect
             <p className="text-xs text-gray-500 truncate">
               {email.body.replace(/<[^>]*>/g, '').substring(0, 60)}...
             </p>
-            
-            {/* Mobile tap indicator */}
-            <div className="flex justify-end mt-2 md:hidden">
-              <span className="text-xs text-blue-500">Tap to view →</span>
-            </div>
           </div>
         ))}
       </div>

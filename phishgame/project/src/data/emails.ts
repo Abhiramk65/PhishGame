@@ -82,7 +82,7 @@ export const emails: Email[] = [
               <p style="color: #555; margin-top: 20px;">Thanks,<br>The Netflix Team</p>
             </div>
             <p style="text-align: center; font-size: 12px; color: #999; margin-top: 20px;">© 2025 Netflix, Inc.</p>
-           </div>`,
+    </div>`,
     date: '2025-05-15T14:37:00',
     hasAttachment: false,
     isPhishing: true,
@@ -300,7 +300,7 @@ export const emails: Email[] = [
             <p style="color: #333; margin-bottom: 15px;">For your security, we have temporarily limited certain features of your account until this matter is resolved.</p>
             <p style="color: #333; margin-top: 20px;">Bank of America Customer Security</p>
             <p style="font-size: 10px; color: #666; margin-top: 15px; border-top: 1px solid #eee; padding-top: 10px;">Please do not reply to this email. This mailbox is not monitored and you will not receive a response.</p>
-           </div>`,
+    </div>`,
     date: '2025-05-16T11:45:00',
     hasAttachment: false,
     isPhishing: true,
@@ -522,7 +522,7 @@ export const emails: Email[] = [
             <p style="color: #333; margin-bottom: 15px; font-size: 14px;">If we do not receive verification within 24 hours, your account access may be suspended as a precautionary measure.</p>
             <p style="color: #555; font-size: 13px; margin-top: 20px;">This is an automated message. Please do not reply.</p>
             <p style="color: #666; font-size: 12px; margin-top: 25px; border-top: 1px solid #e5e5e5; padding-top: 15px;">Apple Support<br>© 2025 Apple Inc. One Apple Park Way, Cupertino, CA 95014</p>
-           </div>`,
+    </div>`,
     date: '2025-05-16T15:22:00',
     hasAttachment: false,
     isPhishing: true,

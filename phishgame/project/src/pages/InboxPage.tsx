@@ -14,6 +14,7 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
   const { emails, identifyEmail, user, resetGame, clearFeedback } = useGameContext();
   const [selectedEmailId, setSelectedEmailId] = useState<string | null>(null);
   const [showCompletionMessage, setShowCompletionMessage] = useState(false);
+  const [showEmailDetail, setShowEmailDetail] = useState(false); // For mobile view toggling
 
   useEffect(() => {
     // Select the first unread email if available when emails from context change
@@ -42,6 +43,11 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
         clearFeedback(); // Clear feedback when a new email is selected
     }
     setSelectedEmailId(emailId);
+    setShowEmailDetail(true); // Show email detail view on mobile when an email is selected
+  };
+
+  const handleBackToInbox = () => {
+    setShowEmailDetail(false); // Hide email detail and show inbox list on mobile
   };
 
   const handleContinue = () => {
@@ -87,6 +93,7 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
     // The useEffect depending on [emails] will run due to resetGame updating context,
     // and the other useEffect [emails, selectedEmailId] will select the first unread email.
     setSelectedEmailId(null); // Reset selection to allow the effect to pick the first unread
+    setShowEmailDetail(false); // Go back to inbox view on reset
   }
 
   return (
@@ -127,15 +134,35 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
         </div>
       ) : (
         <div className="flex flex-col md:flex-row gap-4 h-[calc(100vh-200px)] md:h-[calc(100vh-180px)]">
-          <EmailList
-            emails={emails}
-            selectedEmailId={selectedEmailId}
-            onSelectEmail={handleSelectEmail}
-          />
-          <EmailDetail
-            email={selectedEmail}
-            onContinue={handleContinue}
-          />
+          {/* Email List - Always display on desktop, but conditionally on mobile */}
+          <div className={`w-full md:w-1/3 md:block ${showEmailDetail ? 'hidden' : 'block'}`}>
+            <EmailList
+              emails={emails}
+              selectedEmailId={selectedEmailId}
+              onSelectEmail={handleSelectEmail}
+            />
+          </div>
+          
+          {/* Email Detail - Always display on desktop, but conditionally on mobile */}
+          <div className={`w-full md:w-2/3 md:block ${showEmailDetail ? 'block' : 'hidden'}`}>
+            {/* Mobile back button */}
+            {selectedEmail && (
+              <div className="md:hidden bg-white p-2 border-b border-gray-200">
+                <button 
+                  onClick={handleBackToInbox}
+                  className="flex items-center text-blue-600 space-x-1"
+                >
+                  <ArrowLeft size={18} />
+                  <span>Back to inbox</span>
+                </button>
+              </div>
+            )}
+            
+            <EmailDetail
+              email={selectedEmail}
+              onContinue={handleContinue}
+            />
+          </div>
         </div>
       )}
     </div>

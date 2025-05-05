@@ -163,26 +163,26 @@ const EmailDetail: React.FC<EmailDetailProps> = ({ email, onContinue }) => {
   return (
     <div 
       ref={containerRef}
-      className="w-full md:w-2/3 bg-white p-4 overflow-y-auto max-h-[600px]"
+      className="w-full h-full bg-white overflow-y-auto"
     >
       {/* Email Header */}
-      <div className="border-b border-gray-200 pb-4 mb-4">
-        <h2 className="text-xl font-semibold mb-3">{email.subject}</h2>
+      <div className="border-b border-gray-200 pb-4 mb-4 p-4">
+        <h2 className="text-xl font-semibold mb-3">{email?.subject}</h2>
         <div className="flex flex-wrap justify-between items-center mb-2">
           <div>
             <p className="text-sm">
-              <span className="font-semibold">From:</span> {email.from.name} &lt;{email.from.email}&gt;
+              <span className="font-semibold">From:</span> {email?.from.name} &lt;{email?.from.email}&gt;
             </p>
             <p className="text-sm">
-              <span className="font-semibold">To:</span> {email.to}
+              <span className="font-semibold">To:</span> {email?.to}
             </p>
           </div>
-          <div className="text-sm text-gray-500">
-            {new Date(email.date).toLocaleString()}
+          <div className="text-sm text-gray-500 mt-2 md:mt-0">
+            {email && new Date(email.date).toLocaleString()}
           </div>
         </div>
         
-        {email.hasAttachment && (
+        {email?.hasAttachment && (
           <div className="mt-2 flex items-center p-2 bg-gray-50 rounded border border-gray-200">
             <Paperclip className="h-4 w-4 mr-2 text-gray-500" />
             <span className="text-sm">{email.attachmentName || 'Attachment.pdf'}</span>
@@ -191,23 +191,26 @@ const EmailDetail: React.FC<EmailDetailProps> = ({ email, onContinue }) => {
       </div>
 
       {/* Email Body */}
-      <div className="mb-6">
-        <div className="prose max-w-none">{renderEmailBody()}</div>
+      <div className="mb-6 px-4">
+        <div className="prose max-w-none">{email && renderEmailBody()}</div>
       </div>
 
       {/* --- Game Controls / Feedback Logic --- */}
-      
-      {/* Condition 1: Feedback is actively showing for the *last identified* email */}
+      {/* Condition 1: Feedback is actively showing */}
       {gameState.feedback.show && (
         <div 
           ref={feedbackRef}
-          className={`mt-6 p-4 rounded border ${gameState.feedback.isCorrect ? 'bg-green-50 border-green-200' : 'bg-red-50 border-red-200'}`}
+          className="mx-4 mb-4 p-4 rounded border shadow-sm"
+          style={{
+            backgroundColor: gameState.feedback.isCorrect ? 'rgba(220, 252, 231, 0.8)' : 'rgba(254, 226, 226, 0.8)',
+            borderColor: gameState.feedback.isCorrect ? 'rgb(134, 239, 172)' : 'rgb(252, 165, 165)'
+          }}
         >
           <div className="flex items-start">
              {gameState.feedback.isCorrect ? (
-                <Shield className="h-6 w-6 text-green-500 mr-3 mt-1" />
+                <Shield className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
              ) : (
-                <AlertTriangle className="h-6 w-6 text-red-500 mr-3 mt-1" />
+                <AlertTriangle className="h-6 w-6 text-red-500 mr-3 mt-1 flex-shrink-0" />
              )}
              <div>
                 <h3 className={`font-semibold text-lg ${gameState.feedback.isCorrect ? 'text-green-700' : 'text-red-700'}`}>
@@ -230,7 +233,7 @@ const EmailDetail: React.FC<EmailDetailProps> = ({ email, onContinue }) => {
                 )}
                 <button 
                  onClick={handleContinue}
-                 className={`mt-4 px-4 py-2 rounded font-medium ${
+                 className={`mt-4 px-6 py-3 rounded-full font-medium w-full sm:w-auto ${
                     gameState.feedback.isCorrect 
                     ? 'bg-green-600 hover:bg-green-700'
                     : 'bg-red-600 hover:bg-red-700'
@@ -245,11 +248,11 @@ const EmailDetail: React.FC<EmailDetailProps> = ({ email, onContinue }) => {
 
       {/* Condition 2: Email is selected, unread, and feedback is NOT showing -> Show Identify Buttons */}
       {email && email.unread && !gameState.feedback.show && (
-         <div className="flex flex-col mt-8">
-           <div className="flex justify-between gap-4">
+         <div className="flex flex-col px-4 pb-4 sticky bottom-0 bg-white border-t border-gray-200 pt-4">
+           <div className="flex flex-col sm:flex-row justify-between gap-4">
              <button
                onClick={() => handleIdentify(false)}
-               className="flex-1 bg-green-100 hover:bg-green-200 text-green-800 font-medium py-3 px-4 rounded flex items-center justify-center transition disabled:opacity-50 disabled:cursor-not-allowed"
+               className="flex-1 bg-green-100 hover:bg-green-200 text-green-800 font-medium py-3 px-4 rounded-full flex items-center justify-center transition disabled:opacity-50 disabled:cursor-not-allowed"
                disabled={!email.unread} // Explicitly disable if already answered
              >
                <ThumbsUp className="h-5 w-5 mr-2" />
@@ -257,7 +260,7 @@ const EmailDetail: React.FC<EmailDetailProps> = ({ email, onContinue }) => {
              </button>
              <button
                onClick={() => handleIdentify(true)}
-               className="flex-1 bg-red-100 hover:bg-red-200 text-red-800 font-medium py-3 px-4 rounded flex items-center justify-center transition disabled:opacity-50 disabled:cursor-not-allowed"
+               className="flex-1 bg-red-100 hover:bg-red-200 text-red-800 font-medium py-3 px-4 rounded-full flex items-center justify-center transition disabled:opacity-50 disabled:cursor-not-allowed"
                disabled={!email.unread} // Explicitly disable if already answered
              >
                <ThumbsDown className="h-5 w-5 mr-2" />
@@ -282,10 +285,8 @@ const EmailDetail: React.FC<EmailDetailProps> = ({ email, onContinue }) => {
       
       {/* Condition 3: Email is selected, already read (!unread), and feedback is NOT showing -> Show Already Answered Message */}
       {email && !email.unread && !gameState.feedback.show && (
-        <div className="mt-8 p-4 bg-gray-100 border border-gray-200 rounded text-center">
+        <div className="mx-4 mb-4 p-4 bg-gray-100 border border-gray-200 rounded text-center">
             <p className="text-gray-600 font-medium">You have already reviewed this email.</p>
-             {/* Optional: Add a button to explicitly move to the next unread email? */}
-             {/* <button onClick={onContinue} className="mt-2 text-blue-600 hover:underline text-sm">Next Unread Email</button> */}
         </div>
       )}
 

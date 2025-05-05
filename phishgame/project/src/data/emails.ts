@@ -9,7 +9,23 @@ export const emails: Email[] = [
     from: { name: 'Netflix', email: 'info@netflix.com' },
     to: 'user@example.com',
     subject: 'Your monthly Netflix subscription',
-    body: `<div><p>Hi there,</p><p>We wanted to let you know that your monthly subscription was successfully processed. Your next billing date will be June 15, 2025.</p><p>If you have any questions about your account, please visit our <a href="https://help.netflix.com">Help Center</a>.</p><p>Thanks for being a valued Netflix member!</p><p>The Netflix Team</p></div>`,
+    body: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #000000; padding: 20px; text-align: center;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" style="width: 120px;">
+      </div>
+      <div style="padding: 30px 25px; color: #221f1f;">
+        <h2 style="margin-top: 0; color: #e50914;">Your monthly subscription was processed</h2>
+        <p style="font-size: 16px; line-height: 1.5;">Hi there,</p>
+        <p style="font-size: 16px; line-height: 1.5;">We wanted to let you know that your monthly subscription was successfully processed. Your next billing date will be June 15, 2025.</p>
+        <p style="font-size: 16px; line-height: 1.5;">If you have any questions about your account, please visit our <a href="https://help.netflix.com" style="color: #e50914; text-decoration: none; font-weight: bold;">Help Center</a>.</p>
+        <p style="font-size: 16px; line-height: 1.5;">Thanks for being a valued Netflix member!</p>
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 0;">The Netflix Team</p>
+      </div>
+      <div style="background-color: #f3f3f3; padding: 15px; text-align: center; font-size: 12px; color: #777;">
+        <p style="margin: 0 0 10px;">This message was sent to user@example.com</p>
+        <p style="margin: 0;">© 2025 Netflix, Inc.</p>
+      </div>
+    </div>`,
     date: '2025-05-15T10:23:00',
     hasAttachment: false,
     isPhishing: false,
@@ -20,7 +36,36 @@ export const emails: Email[] = [
     from: { name: 'Amazon', email: 'shipment-tracking@amazon.com' },
     to: 'user@example.com',
     subject: 'Your Amazon.com order has shipped',
-    body: `<div><p>Hello,</p><p>Your package with order #111-222333-4445555 is on its way. It will arrive by Tuesday, May 20, 2025.</p><p>Track your package <a href="https://amazon.com/gp/your-account/ship-track">here</a>.</p><p>Thank you for shopping with Amazon!</p></div>`,
+    body: `<div style="font-family: 'Amazon Ember', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #232f3e; padding: 20px; text-align: left;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" style="width: 100px;">
+      </div>
+      <div style="padding: 30px 25px; color: #111;">
+        <h2 style="margin-top: 0; color: #232f3e; font-weight: 500;">Your Order Has Shipped</h2>
+        <div style="background-color: #f6f6f6; border-radius: 4px; padding: 15px; margin-bottom: 20px;">
+          <p style="font-size: 14px; margin: 0 0 5px;">Arriving by <strong>Tuesday, May 20, 2025</strong></p>
+          <p style="font-size: 14px; margin: 0 0 5px;">Order #: <strong>111-222333-4445555</strong></p>
+        </div>
+        <div style="margin-bottom: 20px; border-bottom: 1px solid #e7e7e7; padding-bottom: 20px;">
+          <div style="display: flex; align-items: center;">
+            <div style="width: 80px; min-width: 80px;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Placeholder_image.png/600px-Placeholder_image.png" alt="Package" style="width: 100%; border-radius: 4px;">
+            </div>
+            <div style="padding-left: 15px;">
+              <p style="font-size: 14px; font-weight: bold; margin: 0 0 5px;">Your package</p>
+              <p style="font-size: 14px; color: #565959; margin: 0;">1 item shipped</p>
+            </div>
+          </div>
+        </div>
+        <p style="font-size: 14px; line-height: 1.5;">Hello,</p>
+        <p style="font-size: 14px; line-height: 1.5;">Your package with order #111-222333-4445555 is on its way and will arrive by Tuesday, May 20, 2025.</p>
+        <a href="https://amazon.com/gp/your-account/ship-track" style="display: inline-block; background-color: #febd69; color: #000; text-decoration: none; padding: 10px 20px; margin: 15px 0; border-radius: 4px; font-weight: bold; text-align: center;">Track Your Package</a>
+        <p style="font-size: 14px; line-height: 1.5;">Thank you for shopping with Amazon!</p>
+      </div>
+      <div style="background-color: #fafafa; padding: 15px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #e7e7e7;">
+        <p style="margin: 0 0 10px;">© 2025 Amazon.com, Inc. or its affiliates. All rights reserved.</p>
+      </div>
+    </div>`,
     date: '2025-05-18T08:15:00',
     hasAttachment: false,
     isPhishing: false,
@@ -31,7 +76,29 @@ export const emails: Email[] = [
     from: { name: 'PayPal', email: 'service@paypal.com' },
     to: 'user@example.com',
     subject: 'You\'ve received a payment',
-    body: `<div><p>Hello User,</p><p>You received a payment of $50.00 USD from John Doe.</p><p>Transaction ID: 6AB789CD0EF1</p><p>Log in to your PayPal account to see the details: <a href="https://www.paypal.com">paypal.com</a></p><p>Thanks,<br>PayPal</p></div>`,
+    body: `<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #ffffff; padding: 20px; text-align: center; border-bottom: 1px solid #eaeaea;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/archive/b/b5/20210820095627%21PayPal_Logo_2014.svg" alt="PayPal" style="width: 100px;">
+      </div>
+      <div style="padding: 30px 25px; color: #2c2e2f; background-color: #f5f7fa;">
+        <h2 style="margin-top: 0; color: #253b80; font-weight: 300; font-size: 24px;">You've got money!</h2>
+        <div style="background-color: #ffffff; border-radius: 4px; padding: 20px; margin-bottom: 20px; border-left: 4px solid #169bd7; box-shadow: 0 1px 3px rgba(0,0,0,0.1);">
+          <p style="font-size: 20px; margin: 0 0 10px; color: #009cde; font-weight: bold;">$50.00 USD</p>
+          <p style="font-size: 14px; margin: 0 0 5px;">From: <strong>John Doe</strong></p>
+          <p style="font-size: 12px; margin: 0; color: #666;">Note: Thanks for your help!</p>
+        </div>
+        <div style="margin-bottom: 25px; padding: 15px; background-color: #fff; border-radius: 4px; border: 1px solid #eaeaea;">
+          <p style="font-size: 14px; margin: 0 0 5px; color: #666;">Transaction ID: <span style="color: #2c2e2f; font-family: monospace;">6AB789CD0EF1</span></p>
+          <p style="font-size: 14px; margin: 0 0 5px; color: #666;">Date: <span style="color: #2c2e2f;">May 19, 2025</span></p>
+        </div>
+        <a href="https://www.paypal.com" style="display: inline-block; background-color: #009cde; color: #fff; text-decoration: none; padding: 12px 30px; margin: 15px 0; border-radius: 4px; font-weight: bold; text-align: center;">Go to PayPal</a>
+        <p style="font-size: 14px; line-height: 1.5; margin-top: 25px;">Thanks,<br>PayPal</p>
+      </div>
+      <div style="background-color: #f5f7fa; padding: 15px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #eaeaea;">
+        <p style="margin: 0 0 10px;">Please do not reply to this email. To get in touch with us, go to the PayPal website and click <strong>Help & Contact</strong>.</p>
+        <p style="margin: 0;">© 2025 PayPal, Inc. All rights reserved.</p>
+      </div>
+    </div>`,
     date: '2025-05-19T11:00:00',
     hasAttachment: false,
     isPhishing: false,
@@ -42,7 +109,37 @@ export const emails: Email[] = [
     from: { name: 'Prime Video', email: 'primevideo@amazon.com' },
     to: 'user@example.com',
     subject: 'New movie added to Prime Video!',
-    body: `<div><p>Hi,</p><p>Check out the latest blockbuster added to Prime Video: "Action Hero Returns".</p><p>Start watching now: <a href="https://www.primevideo.com">Prime Video</a></p><p>Enjoy the show!</p><p>The Prime Video Team</p></div>`,
+    body: `<div style="font-family: 'Amazon Ember', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #1a242f; padding: 20px; text-align: left;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Prime_Video.png" alt="Prime Video" style="width: 120px;">
+      </div>
+      <div style="padding: 0; color: #111; background-color: #0f171e;">
+        <div style="position: relative; overflow: hidden;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Placeholder_image.png/600px-Placeholder_image.png" alt="Action Hero Returns" style="width: 100%; display: block;">
+          <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(15,23,30,0) 0%, rgba(15,23,30,0.7) 70%, rgba(15,23,30,1) 100%);"></div>
+          <div style="position: absolute; bottom: 20px; left: 20px; color: white;">
+            <h2 style="margin: 0 0 10px; font-size: 24px; font-weight: 700;">Action Hero Returns</h2>
+            <p style="margin: 0; font-size: 14px; color: #aaa;">New on Prime • Action, Adventure • 2h 20m</p>
+          </div>
+        </div>
+        <div style="padding: 30px 25px; color: #fff;">
+          <p style="font-size: 16px; line-height: 1.5;">Hi,</p>
+          <p style="font-size: 16px; line-height: 1.5;">Check out the latest blockbuster added to Prime Video: "Action Hero Returns". When a former agent is called back into action, he must confront enemies from his past while protecting his family.</p>
+          <div style="margin: 20px 0;">
+            <p style="font-size: 14px; color: #aaa; margin: 0 0 5px;">Starring:</p>
+            <p style="font-size: 14px; margin: 0 0 15px;">John Smith, Emma Johnson, Michael Brown</p>
+            <p style="font-size: 14px; color: #aaa; margin: 0 0 5px;">Director:</p>
+            <p style="font-size: 14px; margin: 0;">Robert Wilson</p>
+          </div>
+          <a href="https://www.primevideo.com" style="display: inline-block; background-color: #00a8e1; color: #fff; text-decoration: none; padding: 12px 40px; margin: 15px 0; border-radius: 2px; font-weight: bold; text-align: center;">Watch Now</a>
+          <p style="font-size: 16px; line-height: 1.5; margin-top: 25px;">Enjoy the show!</p>
+          <p style="font-size: 16px; line-height: 1.5;">The Prime Video Team</p>
+        </div>
+      </div>
+      <div style="background-color: #1a242f; padding: 15px; text-align: center; font-size: 12px; color: #8197a4; border-top: 1px solid #31414e;">
+        <p style="margin: 0 0 10px;">© 2025 Amazon.com, Inc. or its affiliates. All rights reserved.</p>
+      </div>
+    </div>`,
     date: '2025-05-20T16:30:00',
     hasAttachment: false,
     isPhishing: false,
@@ -53,7 +150,43 @@ export const emails: Email[] = [
     from: { name: 'Google', email: 'no-reply@accounts.google.com' },
     to: 'user@example.com',
     subject: 'Security alert',
-    body: `<div><p>We detected a new sign-in to your Google Account on a Windows device.</p><p>If this was you, you don't need to do anything. If not, we'll help you secure your account.</p><p>Check activity: <a href="https://myaccount.google.com/">Google Account</a></p><p>Thanks,<br>The Google Accounts team</p></div>`,
+    body: `<div style="font-family: 'Google Sans', Roboto, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; color: #202124;">
+      <div style="padding: 24px; text-align: center; border-bottom: 1px solid #f1f3f4;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/320px-Google_2015_logo.svg.png" alt="Google" style="width: 74px;">
+      </div>
+      <div style="padding: 24px 40px 36px;">
+        <div style="padding-bottom: 24px;">
+          <h2 style="color: #202124; font-size: 16px; font-weight: 500; margin: 0 0 8px;">We detected a new sign-in to your Google Account</h2>
+          <div style="font-size: 14px; color: #5f6368;">
+            <p style="margin: 16px 0;">user@example.com</p>
+          </div>
+        </div>
+        
+        <div style="background-color: #f1f3f4; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
+          <div style="display: flex; align-items: center;">
+            <div style="margin-right: 16px;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Windows_logo_-_2012.svg/88px-Windows_logo_-_2012.svg.png" alt="Windows" style="width: 40px; height: 40px;">
+            </div>
+            <div>
+              <p style="margin: 0 0 4px; font-weight: 500; font-size: 14px;">Windows Device</p>
+              <p style="margin: 0; font-size: 12px; color: #5f6368;">May 21, 2025, 9:45 AM (UTC)</p>
+              <p style="margin: 4px 0 0; font-size: 12px; color: #5f6368;">IP Address: 192.0.XXX.XXX</p>
+            </div>
+          </div>
+        </div>
+
+        <p style="font-size: 14px; line-height: 1.5; color: #202124; margin-bottom: 24px;">If this was you, you don't need to do anything. If not, we'll help you secure your account.</p>
+        
+        <div style="margin-bottom: 32px; text-align: center;">
+          <a href="https://myaccount.google.com/" style="display: inline-block; text-decoration: none; color: #fff; background-color: #1a73e8; border-radius: 4px; padding: 10px 24px; font-weight: 500; font-size: 14px;">Check activity</a>
+        </div>
+        
+        <div style="border-top: 1px solid #f1f3f4; padding-top: 16px; font-size: 12px; color: #5f6368;">
+          <p>You received this email to let you know about important changes to your Google Account and services.</p>
+          <p style="margin-bottom: 0;">© 2025 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA</p>
+        </div>
+      </div>
+    </div>`,
     date: '2025-05-21T09:45:00',
     hasAttachment: false,
     isPhishing: false,
@@ -224,7 +357,38 @@ export const emails: Email[] = [
     from: { name: 'Bank of America', email: 'customerservice@bofa.com' },
     to: 'user@example.com',
     subject: 'Your Bank of America statement is ready',
-    body: `<div><p>Hello,</p><p>Your Bank of America statement for ending May 15, 2025 is now available online.</p><p>Please log in to your account at <a href="https://www.bankofamerica.com">bankofamerica.com</a> to view your statement.</p><p>Thank you for banking with Bank of America.</p><p>This is an automated message, please do not reply.</p></div>`,
+    body: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #e31836; padding: 20px; text-align: left;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bank_of_America_logo.svg/320px-Bank_of_America_logo.svg.png" alt="Bank of America" style="width: 200px;">
+      </div>
+      <div style="padding: 30px 25px; color: #333;">
+        <h2 style="margin-top: 0; font-size: 20px; color: #333; font-weight: 500;">Your statement is ready to view</h2>
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">Hello,</p>
+        
+        <div style="background-color: #f8f8f8; border-left: 4px solid #e31836; padding: 15px; margin-bottom: 25px;">
+          <p style="margin: 0 0 10px; font-weight: bold;">Statement information:</p>
+          <p style="margin: 0 0 5px;">Account: ••••••••<span style="font-weight: 600;">4567</span></p>
+          <p style="margin: 0 0 5px;">Statement period: April 15 - May 15, 2025</p>
+          <p style="margin: 0;">Available: <a href="https://www.bankofamerica.com" style="color: #0052C2; text-decoration: none; font-weight: bold;">May 16, 2025</a></p>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">Your Bank of America statement for ending May 15, 2025 is now available online. Please log in to your account to view your statement.</p>
+        
+        <div style="text-align: center; margin: 30px 0;">
+          <a href="https://www.bankofamerica.com" style="display: inline-block; background-color: #0052C2; color: white; text-decoration: none; padding: 12px 30px; border-radius: 4px; font-weight: bold; font-size: 16px;">View Your Statement</a>
+        </div>
+        
+        <div style="border-top: 1px solid #e5e5e5; margin-top: 30px; padding-top: 20px;">
+          <p style="font-size: 14px; color: #666; margin-bottom: 15px;">For your security, please don't reply to this email. This mailbox isn't monitored.</p>
+          <p style="font-size: 14px; color: #666; margin-bottom: 0;">Thank you for banking with Bank of America.</p>
+        </div>
+      </div>
+      <div style="background-color: #f3f3f3; padding: 20px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #e5e5e5;">
+        <p style="margin: 0 0 10px;">Please do not reply to this email. This mailbox is not monitored and you will not receive a response.</p>
+        <p style="margin: 0 0 10px;">Bank of America, N.A. Member FDIC. Equal Housing Lender</p>
+        <p style="margin: 0;">© 2025 Bank of America Corporation. All rights reserved.</p>
+      </div>
+    </div>`,
     date: '2025-05-16T09:12:00',
     hasAttachment: false,
     isPhishing: false,
@@ -246,7 +410,41 @@ export const emails: Email[] = [
     from: { name: 'LinkedIn', email: 'messages-noreply@linkedin.com' },
     to: 'user@example.com',
     subject: 'You have a new message from Sarah Chen',
-    body: `<div><p>Hi User,</p><p>Sarah Chen sent you a message regarding the Project Manager position.</p><p>View message: <a href="https://www.linkedin.com/messaging/">LinkedIn Messaging</a></p><p>Best,<br>The LinkedIn Team</p></div>`,
+    body: `<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #0a66c2; padding: 20px; text-align: center;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/200px-LinkedIn_Logo.svg.png" alt="LinkedIn" style="width: 100px;">
+      </div>
+      <div style="padding: 30px 25px; color: #000000;">
+        <h2 style="margin-top: 0; font-size: 18px; color: rgba(0,0,0,0.9); font-weight: 600;">You have a new message</h2>
+        
+        <div style="margin: 25px 0; display: flex; align-items: center;">
+          <div style="margin-right: 15px;">
+            <div style="width: 72px; height: 72px; background-color: #f5f5f5; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+              <div style="font-size: 24px; font-weight: bold; color: #0a66c2;">SC</div>
+            </div>
+          </div>
+          <div>
+            <p style="margin: 0; font-weight: 600; font-size: 16px;">Sarah Chen</p>
+            <p style="margin: 4px 0 0; font-size: 14px; color: rgba(0,0,0,0.6);">Project Manager at Acme Corporation</p>
+          </div>
+        </div>
+        
+        <div style="background-color: #f9fafb; border: 1px solid #e0e0e0; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
+          <p style="font-size: 14px; line-height: 1.5; margin: 0; color: rgba(0,0,0,0.9);">Hi there! I wanted to follow up about the Project Manager position we discussed last week. Do you have time for a call tomorrow to discuss next steps?</p>
+        </div>
+        
+        <div style="text-align: center; margin: 30px 0 20px;">
+          <a href="https://www.linkedin.com/messaging/" style="display: inline-block; background-color: #0a66c2; color: white; text-decoration: none; padding: 10px 24px; border-radius: 24px; font-weight: 600; font-size: 16px;">Reply to Sarah</a>
+        </div>
+        
+        <p style="font-size: 14px; line-height: 1.5; margin-top: 30px; color: rgba(0,0,0,0.6); border-top: 1px solid #e0e0e0; padding-top: 20px;">You can respond to this message by replying directly to this email or by visiting LinkedIn.</p>
+        
+      </div>
+      <div style="background-color: #f3f6f8; padding: 20px; text-align: center; font-size: 12px; color: rgba(0,0,0,0.6); border-top: 1px solid #e0e0e0;">
+        <p style="margin: 0 0 10px;">This email was sent to user@example.com.</p>
+        <p style="margin: 0 0 10px;">© 2025 LinkedIn Corporation, 1000 West Maude Avenue, Sunnyvale, CA 94085. LinkedIn and the LinkedIn logo are registered trademarks of LinkedIn.</p>
+      </div>
+    </div>`,
     date: '2025-05-24T10:30:00',
     hasAttachment: false,
     isPhishing: false,
@@ -257,7 +455,49 @@ export const emails: Email[] = [
     from: { name: 'Dropbox', email: 'no-reply@dropbox.com' },
     to: 'user@example.com',
     subject: 'Your Dropbox is almost full',
-    body: `<div><p>Hi,</p><p>Your Dropbox account (user@example.com) is currently at 95% capacity.</p><p>To avoid interruptions, consider upgrading your plan or freeing up space.</p><p>Manage your storage: <a href="https://www.dropbox.com/account/plan">Dropbox Plans</a></p><p>Thanks,<br>The Dropbox Team</p></div>`,
+    body: `<div style="font-family: 'Open Sans', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #ffffff; padding: 20px; text-align: center; border-bottom: 1px solid #e5e5e5;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Dropbox_Icon.svg/120px-Dropbox_Icon.svg.png" alt="Dropbox" style="width: 42px;">
+      </div>
+      <div style="padding: 30px 25px; color: #1E1919;">
+        <h2 style="margin-top: 0; font-size: 22px; font-weight: 600; color: #1E1919;">Your Dropbox is almost full</h2>
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">Hi there,</p>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 20px;">Your Dropbox account (user@example.com) is currently at 95% capacity.</p>
+        
+        <div style="margin: 30px 0;">
+          <div style="position: relative; height: 20px; background-color: #f7f9fa; border-radius: 10px; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 0; height: 100%; width: 95%; background-color: #0061ff; border-radius: 10px;"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 14px;">
+            <span>1.9 GB used</span>
+            <span>2 GB total</span>
+          </div>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 30px;">To avoid interruptions, consider upgrading your plan or freeing up space by removing files you no longer need.</p>
+        
+        <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+          <div style="flex: 1; border: 1px solid #e5e5e5; border-radius: 8px; padding: 15px; text-align: center;">
+            <h3 style="margin-top: 0; font-size: 16px; font-weight: 600; color: #1E1919;">Upgrade</h3>
+            <p style="font-size: 14px; color: #637282; margin-bottom: 15px;">Get more space and additional features</p>
+            <a href="https://www.dropbox.com/account/plan" style="display: inline-block; background-color: #0061ff; color: white; text-decoration: none; padding: 8px 16px; border-radius: 4px; font-weight: 600; font-size: 14px;">View Plans</a>
+          </div>
+          <div style="flex: 1; border: 1px solid #e5e5e5; border-radius: 8px; padding: 15px; text-align: center;">
+            <h3 style="margin-top: 0; font-size: 16px; font-weight: 600; color: #1E1919;">Free up space</h3>
+            <p style="font-size: 14px; color: #637282; margin-bottom: 15px;">Review and delete unused files</p>
+            <a href="https://www.dropbox.com/account" style="display: inline-block; background-color: #ffffff; color: #0061ff; text-decoration: none; padding: 8px 16px; border-radius: 4px; border: 1px solid #0061ff; font-weight: 600; font-size: 14px;">Go to Dropbox</a>
+          </div>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 0;">Thanks,<br>The Dropbox Team</p>
+        
+      </div>
+      <div style="background-color: #f7f9fa; padding: 20px; text-align: center; font-size: 12px; color: #637282; border-top: 1px solid #e5e5e5;">
+        <p style="margin: 0 0 10px;">Dropbox, Inc., 1800 Owens St. San Francisco, CA 94158</p>
+        <p style="margin: 0;">© 2025 Dropbox</p>
+      </div>
+    </div>`,
     date: '2025-05-25T16:00:00',
     hasAttachment: false,
     isPhishing: false,
@@ -268,7 +508,52 @@ export const emails: Email[] = [
     from: { name: 'Microsoft Account Team', email: 'account-security-noreply@accountprotection.microsoft.com' },
     to: 'user@example.com',
     subject: 'Microsoft account password change',
-    body: `<div><p>Hi User,</p><p>The password for your Microsoft account us***@example.com was changed on 5/26/2025 11:15 AM (UTC).</p><p>If this was you, then you can safely ignore this email.</p><p>If this wasn't you, your account has been compromised. Please follow these steps:<br>1. Reset your password.<br>2. Review your security info.</p><p>Click here to review recent activity: <a href="https://account.microsoft.com/">Microsoft Account</a></p><p>Thanks,<br>The Microsoft account team</p></div>`,
+    body: `<div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #ffffff; padding: 20px; text-align: left; border-bottom: 2px solid #0078d4;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/200px-Microsoft_logo_%282012%29.svg.png" alt="Microsoft" style="width: 120px;">
+      </div>
+      <div style="padding: 30px 25px; color: #333333;">
+        <h2 style="margin-top: 0; font-size: 24px; font-weight: 600; color: #000000;">Microsoft account password was changed</h2>
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">Hi User,</p>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">The password for your Microsoft account <span style="font-weight: 600;">us***@example.com</span> was changed on 5/26/2025 11:15 AM (UTC).</p>
+        
+        <div style="background-color: #f2f2f2; border-left: 4px solid #0078d4; padding: 15px; margin: 25px 0;">
+          <p style="margin: 0; font-weight: bold; color: #000000; font-size: 16px;">Account activity timeline:</p>
+          <div style="display: flex; margin-top: 15px; align-items: flex-start;">
+            <div style="min-width: 20px; height: 20px; background-color: #0078d4; border-radius: 50%; margin-right: 10px; margin-top: 2px;"></div>
+            <div>
+              <p style="margin: 0 0 5px; font-weight: 600;">Password change</p>
+              <p style="margin: 0; font-size: 14px; color: #666;">May 26, 2025, 11:15 AM (UTC)</p>
+              <p style="margin: 5px 0 0; font-size: 14px; color: #666;">IP address: 104.XXX.XXX.XXX</p>
+            </div>
+          </div>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 15px;">If this was you, then you can safely ignore this email.</p>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 15px; font-weight: 600; color: #d83b01;">If this wasn't you, your account has been compromised.</p>
+        
+        <div style="background-color: #d1e8ff; padding: 15px; margin: 25px 0; border-radius: 4px;">
+          <p style="margin: 0 0 10px; font-weight: 600; color: #000000;">If your account is compromised:</p>
+          <ol style="margin: 0; padding-left: 25px;">
+            <li style="margin-bottom: 10px;">Reset your password immediately.</li>
+            <li style="margin-bottom: 0;">Review your security info.</li>
+          </ol>
+        </div>
+        
+        <div style="text-align: center; margin: 30px 0;">
+          <a href="https://account.microsoft.com/" style="display: inline-block; background-color: #0078d4; color: white; text-decoration: none; padding: 12px 30px; border-radius: 2px; font-weight: 600; font-size: 16px;">Review recent activity</a>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-top: 30px;">Thanks,<br>The Microsoft account team</p>
+        
+      </div>
+      <div style="background-color: #f2f2f2; padding: 20px; text-align: left; font-size: 12px; color: #666; border-top: 1px solid #e5e5e5;">
+        <p style="margin: 0 0 10px;">Microsoft respects your privacy. To learn more, please read our <a href="https://privacy.microsoft.com/privacystatement" style="color: #0067b8; text-decoration: none;">Privacy Statement</a>.</p>
+        <p style="margin: 0;">Microsoft Corporation, One Microsoft Way, Redmond, WA 98052 USA</p>
+      </div>
+    </div>`,
     date: '2025-05-26T11:20:00',
     hasAttachment: false,
     isPhishing: false,
@@ -451,7 +736,53 @@ export const emails: Email[] = [
     from: { name: 'Apple', email: 'no_reply@apple.com' },
     to: 'user@example.com',
     subject: 'Your Apple ID was used to sign in to iCloud',
-    body: `<div><p>Dear Customer,</p><p>Your Apple ID (user@example.com) was used to sign in to iCloud via a web browser.</p><p>Date and Time: May 16, 2025 at 2:30 PM</p><p>If you recently signed in to your account, you can disregard this email.</p><p>If you did not sign in and believe someone may have accessed your account, go to <a href="https://appleid.apple.com">Apple ID</a> to change your password immediately.</p><p>Apple Support</p></div>`,
+    body: `<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1d1d1f;">
+      <div style="padding: 20px 0 10px; text-align: center;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/320px-Apple_logo_black.svg.png" alt="Apple" style="width: 40px;">
+      </div>
+      <div style="padding: 20px 40px 40px; background-color: #ffffff;">
+        <h1 style="margin-top: 30px; margin-bottom: 24px; font-size: 22px; font-weight: 600; text-align: center; color: #1d1d1f;">New sign-in to iCloud</h1>
+        
+        <p style="margin-bottom: 24px; font-size: 16px; line-height: 1.5; color: #1d1d1f;">Dear Customer,</p>
+        
+        <p style="margin-bottom: 16px; font-size: 16px; line-height: 1.5; color: #1d1d1f;">Your Apple ID (user@example.com) was used to sign in to iCloud via a web browser.</p>
+        
+        <div style="background-color: #f5f5f7; border-radius: 10px; padding: 16px 20px; margin: 25px 0;">
+          <table style="width: 100%; font-size: 14px; color: #1d1d1f;">
+            <tr>
+              <td style="padding: 8px 0; vertical-align: top; width: 130px;"><strong>Date and Time:</strong></td>
+              <td style="padding: 8px 0;">May 16, 2025 at 2:30 PM</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; vertical-align: top;"><strong>Location:</strong></td>
+              <td style="padding: 8px 0;">Near New York, United States</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0; vertical-align: top;"><strong>Device:</strong></td>
+              <td style="padding: 8px 0;">Safari on Mac</td>
+            </tr>
+          </table>
+        </div>
+        
+        <p style="margin-bottom: 16px; font-size: 16px; line-height: 1.5; color: #1d1d1f;">If you recently signed in to your account, you can disregard this email.</p>
+        
+        <p style="margin-bottom: 30px; font-size: 16px; line-height: 1.5; color: #1d1d1f;">If you did not sign in and believe someone may have accessed your account, you should change your password immediately.</p>
+        
+        <div style="text-align: center; margin: 30px 0;">
+          <a href="https://appleid.apple.com" style="display: inline-block; background-color: #0071e3; color: white; text-decoration: none; padding: 12px 30px; border-radius: 18px; font-weight: 400; font-size: 16px;">Change Password</a>
+        </div>
+        
+        <div style="border-top: 1px solid #e5e5e5; margin-top: 40px; padding-top: 20px; font-size: 14px; color: #86868b;">
+          <p style="margin-bottom: 16px; line-height: 1.5;">If you need additional help with your Apple ID, visit <a href="https://support.apple.com/apple-id" style="color: #0066cc; text-decoration: none;">Apple ID Support</a>.</p>
+          <p style="margin-bottom: 0; line-height: 1.5;">Apple Support</p>
+        </div>
+      </div>
+      <div style="text-align: center; padding: 20px; font-size: 12px; color: #86868b;">
+        <p style="margin-bottom: 16px;">This is an automatically generated email—please do not reply to this message. For more information, visit <a href="https://support.apple.com" style="color: #0066cc; text-decoration: none;">Apple Support</a>.</p>
+        <p style="margin-bottom: 16px;">Privacy Policy | <a href="https://www.apple.com/legal/terms/site.html" style="color: #0066cc; text-decoration: none;">Terms of Use</a></p>
+        <p style="margin-bottom: 0;">Copyright © 2025 Apple Inc. One Apple Park Way, Cupertino, CA 95014, United States. All rights reserved.</p>
+      </div>
+    </div>`,
     date: '2025-05-16T14:35:00',
     hasAttachment: false,
     isPhishing: false,
@@ -462,7 +793,42 @@ export const emails: Email[] = [
     from: { name: 'Chase Bank', email: 'no.reply@chase.com' },
     to: 'user@example.com',
     subject: 'Important Information Regarding Your Account',
-    body: `<div><p>Dear Customer,</p><p>We've updated our Privacy Policy and User Agreement. These changes will take effect on June 15, 2025.</p><p>You can review the updated documents by logging into your account:</p><p><a href="https://www.chase.com">Chase Online</a></p><p>No action is required from you at this time. Thank you for banking with Chase.</p><p>Sincerely,<br>Chase Customer Service</p></div>`,
+    body: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #0f287f; padding: 25px; text-align: left;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Chase_logo_2007.svg/320px-Chase_logo_2007.svg.png" alt="Chase" style="width: 140px;">
+      </div>
+      <div style="padding: 30px 25px; color: #333333;">
+        <h2 style="margin-top: 0; font-size: 20px; color: #0f287f; font-weight: 600;">Policy Updates for Your Chase Account</h2>
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">Dear Customer,</p>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">We've updated our Privacy Policy and User Agreement. These changes will take effect on <strong>June 15, 2025</strong>.</p>
+        
+        <div style="background-color: #f4f8fb; border-left: 4px solid #0f287f; padding: 20px; margin-bottom: 25px; border-radius: 2px;">
+          <h3 style="margin-top: 0; font-size: 16px; color: #0f287f; font-weight: 600;">Summary of Updates</h3>
+          <ul style="padding-left: 20px; margin: 15px 0 0;">
+            <li style="margin-bottom: 10px; font-size: 14px;">Enhanced information on how we collect and use data to protect against fraud</li>
+            <li style="margin-bottom: 10px; font-size: 14px;">Updated terms for digital banking features</li>
+            <li style="margin-bottom: 0; font-size: 14px;">Revised dispute resolution process</li>
+          </ul>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">You can review the updated documents by logging into your account. No immediate action is required from you at this time.</p>
+        
+        <div style="text-align: center; margin: 30px 0 20px;">
+          <a href="https://www.chase.com" style="display: inline-block; background-color: #0f287f; color: white; text-decoration: none; padding: 12px 30px; border-radius: 4px; font-weight: 600; font-size: 16px;">Log In to Your Account</a>
+        </div>
+        
+        <div style="border-top: 1px solid #e5e5e5; margin-top: 30px; padding-top: 20px; font-size: 14px; color: #666666;">
+          <p style="margin-bottom: 15px; line-height: 1.5;">If you have any questions about these changes, please contact Chase Customer Service at the number on the back of your card or visit your local Chase branch.</p>
+          <p style="line-height: 1.5; margin-bottom: 0;">Thank you for banking with Chase.</p>
+        </div>
+      </div>
+      <div style="background-color: #f2f2f2; padding: 20px; text-align: center; font-size: 12px; color: #666666; border-top: 1px solid #e5e5e5;">
+        <p style="margin: 0 0 10px;">Please do not reply to this email. This mailbox is not monitored and you will not receive a response.</p>
+        <p style="margin: 0 0 10px;">For security reasons, we recommend that you log in directly by typing chase.com in your browser.</p>
+        <p style="margin: 0;">© 2025 JPMorgan Chase & Co.</p>
+      </div>
+    </div>`,
     date: '2025-05-27T09:00:00',
     hasAttachment: false,
     isPhishing: false,
@@ -473,7 +839,51 @@ export const emails: Email[] = [
     from: { name: 'Your Company HR', email: 'hr@yourcompanydomain.com' },
     to: 'user@example.com',
     subject: 'Action Required: Complete Your Annual Compliance Training',
-    body: `<div><p>Hello Team,</p><p>This is a reminder that the mandatory annual compliance training deadline is approaching (May 31, 2025).</p><p>Please log in to the company portal to complete your assigned modules: <a href="https://internal.yourcompanydomain.com/training">Company Training Portal</a></p><p>Failure to complete the training by the deadline may result in disciplinary action.</p><p>Thank you,<br>HR Department</p></div>`,
+    body: `<div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #0072c6; padding: 20px; text-align: left;">
+        <h1 style="color: white; margin: 0; font-size: 22px; font-weight: 500;">YOUR COMPANY</h1>
+      </div>
+      <div style="padding: 30px 25px; color: #333333;">
+        <h2 style="margin-top: 0; font-size: 20px; color: #0072c6; font-weight: 600;">Annual Compliance Training Reminder</h2>
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 20px;">Hello Team,</p>
+        
+        <div style="background-color: #fff4e5; border-left: 4px solid #ff9800; padding: 15px; margin-bottom: 25px;">
+          <p style="margin: 0 0 5px; font-weight: 600; font-size: 16px;">⚠️ Deadline Approaching</p>
+          <p style="margin: 0; font-size: 14px;">The mandatory annual compliance training deadline is <strong>May 31, 2025</strong> (9 days remaining).</p>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 20px;">This is a reminder that all employees must complete the assigned training modules by the deadline. Failure to complete the training may result in disciplinary action as outlined in our company policies.</p>
+        
+        <div style="background-color: #f5f5f5; border: 1px solid #e0e0e0; border-radius: 4px; padding: 20px; margin-bottom: 25px;">
+          <h3 style="margin-top: 0; font-size: 16px; color: #333333; font-weight: 600;">Required Training Modules:</h3>
+          <ul style="padding-left: 20px; margin: 15px 0 20px;">
+            <li style="margin-bottom: 10px; font-size: 14px;">Data Privacy and Security (30 minutes)</li>
+            <li style="margin-bottom: 10px; font-size: 14px;">Code of Business Conduct (45 minutes)</li>
+            <li style="margin-bottom: 10px; font-size: 14px;">Workplace Harassment Prevention (25 minutes)</li>
+            <li style="margin-bottom: 0; font-size: 14px;">Ethics and Compliance Overview (20 minutes)</li>
+          </ul>
+          
+          <div style="display: flex; align-items: center; background-color: #e8f4fd; padding: 12px; border-radius: 4px;">
+            <div style="margin-right: 15px; min-width: 40px; text-align: center;">
+              <span style="display: inline-block; width: 32px; height: 32px; border-radius: 50%; background-color: #0072c6; color: white; line-height: 32px; font-size: 16px; font-weight: bold;">i</span>
+            </div>
+            <div style="font-size: 14px;">Your current completion status: <strong>1 of 4 modules completed</strong></div>
+          </div>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">Please log in to the company training portal to complete your assigned modules. Most employees can complete all required training in under 2 hours.</p>
+        
+        <div style="text-align: center; margin: 30px 0 20px;">
+          <a href="https://internal.yourcompanydomain.com/training" style="display: inline-block; background-color: #0072c6; color: white; text-decoration: none; padding: 12px 30px; border-radius: 4px; font-weight: 600; font-size: 16px;">Access Training Portal</a>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 0;">If you have any questions or technical issues with the training portal, please contact the HR department at <a href="mailto:hrhelp@yourcompanydomain.com" style="color: #0072c6; text-decoration: none;">hrhelp@yourcompanydomain.com</a>.</p>
+      </div>
+      <div style="background-color: #f2f2f2; padding: 20px; text-align: center; font-size: 12px; color: #666666; border-top: 1px solid #e5e5e5;">
+        <p style="margin: 0 0 10px;">Thank you for your commitment to maintaining our company's culture of compliance and integrity.</p>
+        <p style="margin: 0;">Human Resources Department | Your Company | This is an internal communication</p>
+      </div>
+    </div>`,
     date: '2025-05-28T11:30:00',
     hasAttachment: false,
     isPhishing: false,
@@ -484,7 +894,46 @@ export const emails: Email[] = [
     from: { name: 'GitHub', email: 'noreply@github.com' },
     to: 'user@example.com',
     subject: '[GitHub] A new public key was added to your account',
-    body: `<div><p>Hey User,</p><p>A new public key with the fingerprint SHA256:abcdef123456... was added to your account from IP address 198.51.100.1 (Example City, Country) on May 29, 2025 at 3:00 PM UTC.</p><p>If you did not add this key, please review your security settings and remove any unauthorized keys immediately: <a href="https://github.com/settings/keys">GitHub Security Settings</a></p><p>Thanks,<br>The GitHub Team</p></div>`,
+    body: `<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e1e4e8; border-radius: 6px; overflow: hidden;">
+      <div style="background-color: #24292e; padding: 24px; text-align: center;">
+        <img src="https://github.githubassets.com/images/email/global/octocat-logo.png" alt="GitHub" style="width: 32px;">
+      </div>
+      <div style="padding: 24px; background-color: #ffffff; color: #24292e;">
+        <h1 style="margin-top: 0; margin-bottom: 16px; font-size: 20px; font-weight: 600; color: #24292e;">A new SSH key was added to your account</h1>
+        
+        <p style="margin-bottom: 16px; font-size: 16px; line-height: 1.5;">Hey @User,</p>
+        
+        <p style="margin-bottom: 16px; font-size: 16px; line-height: 1.5;">A new SSH key was added to your GitHub account:</p>
+        
+        <div style="background-color: #f6f8fa; border: 1px solid #e1e4e8; border-radius: 6px; padding: 16px; margin-bottom: 24px;">
+          <p style="margin: 0 0 12px; font-size: 14px; line-height: 1.5;"><strong>MacBook Pro</strong></p>
+          <p style="margin: 0; font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace; font-size: 12px; overflow-wrap: break-word; line-height: 1.5; color: #444d56;">SHA256:abcdef123456789abcdef123456789abcdef123456789abc</p>
+        </div>
+        
+        <div style="background-color: #fffbdd; border: 1px solid #eed888; border-radius: 6px; padding: 16px; margin-bottom: 24px;">
+          <h3 style="margin-top: 0; margin-bottom: 8px; font-size: 14px; font-weight: 600; line-height: 1.5;">Details</h3>
+          <ul style="margin: 0; padding-left: 20px; font-size: 14px; line-height: 1.5;">
+            <li><strong>Key:</strong> SHA256:abcdef123456...</li>
+            <li><strong>Added by:</strong> User (that's you)</li>
+            <li><strong>Added from:</strong> 198.51.100.1 (Example City, Country)</li>
+            <li><strong>Added at:</strong> May 29, 2025 at 3:00 PM UTC</li>
+          </ul>
+        </div>
+        
+        <p style="margin-bottom: 24px; font-size: 16px; line-height: 1.5;">If you did not add this key, you should <a href="https://github.com/settings/keys" style="color: #0366d6; text-decoration: none;">remove it immediately</a> and change your GitHub account password.</p>
+        
+        <div style="text-align: center; margin: 32px 0;">
+          <a href="https://github.com/settings/keys" style="display: inline-block; background-color: #2ea44f; color: white; text-decoration: none; padding: 10px 24px; border-radius: 6px; font-weight: 600; font-size: 14px;">View your SSH keys</a>
+        </div>
+        
+        <p style="font-size: 14px; color: #6a737d; margin-top: 32px; margin-bottom: 0; border-top: 1px solid #e1e4e8; padding-top: 16px;">GitHub takes the security of your account seriously. Whenever a new SSH key is added to your account, we'll send an email like this one to ensure that you are aware of the changes to your account. <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github" style="color: #0366d6; text-decoration: none;">Learn more about account security</a>.</p>
+      </div>
+      <div style="background-color: #f6f8fa; padding: 24px; text-align: center; font-size: 12px; color: #6a737d; border-top: 1px solid #e1e4e8;">
+        <img src="https://github.githubassets.com/images/email/icons/github-mark.png" alt="GitHub" style="width: 24px; opacity: 0.3; margin-bottom: 8px;">
+        <p style="margin: 0 0 8px;">GitHub, Inc. • 88 Colin P Kelly Jr Street • San Francisco, CA 94107 • USA</p>
+        <p style="margin: 0 0 8px;">Questions? Please contact <a href="https://support.github.com" style="color: #0366d6; text-decoration: none;">GitHub Support</a></p>
+      </div>
+    </div>`,
     date: '2025-05-29T15:05:00',
     hasAttachment: false,
     isPhishing: false,
@@ -495,7 +944,53 @@ export const emails: Email[] = [
     from: { name: 'IRS (Internal Revenue Service)', email: 'info@irs.gov' },
     to: 'user@example.com',
     subject: 'Update on Your 2024 Tax Refund Status',
-    body: `<div><p>Dear Taxpayer,</p><p>You can check the status of your federal income tax refund using the Where's My Refund? tool on IRS.gov.</p><p>You will need your Social Security number or ITIN, your filing status, and your exact refund amount.</p><p>Check your refund status here: <a href="https://www.irs.gov/refunds">Where's My Refund?</a></p><p>Please note: The IRS will not initiate contact with taxpayers by email, text messages or social media channels to request personal or financial information.</p><p>Internal Revenue Service</p></div>`,
+    body: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #003865; padding: 25px; text-align: left;">
+        <table style="width: 100%;" cellpadding="0" cellspacing="0">
+          <tr>
+            <td style="vertical-align: middle; width: 50px;">
+              <img src="https://www.irs.gov/themes/custom/equity/logo.svg" alt="IRS Logo" style="width: 50px; height: 50px; display: block;">
+            </td>
+            <td style="vertical-align: middle; padding-left: 15px;">
+              <h1 style="color: white; margin: 0; font-size: 18px; font-weight: 500;">Internal Revenue Service</h1>
+              <p style="color: white; margin: 5px 0 0; font-size: 14px; font-weight: normal;">Department of the Treasury</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div style="padding: 30px 25px; color: #333333;">
+        <h2 style="margin-top: 0; font-size: 20px; color: #003865; font-weight: 600;">Tax Refund Status Information</h2>
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 20px;">Dear Taxpayer,</p>
+        
+        <div style="background-color: #f0f7fc; border-left: 4px solid #003865; padding: 15px; margin-bottom: 25px;">
+          <p style="margin: 0; font-size: 15px; line-height: 1.5;">The IRS reminds you that you can check the status of your federal income tax refund using the <strong>Where's My Refund?</strong> tool on IRS.gov. This tool is updated once every 24 hours.</p>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 20px;">To check your refund status, you will need to provide:</p>
+        
+        <ul style="padding-left: 20px; margin-bottom: 25px;">
+          <li style="margin-bottom: 10px; font-size: 16px; line-height: 1.5;">Your Social Security Number (SSN) or Individual Taxpayer Identification Number (ITIN)</li>
+          <li style="margin-bottom: 10px; font-size: 16px; line-height: 1.5;">Your filing status (e.g., Single, Married Filing Jointly, etc.)</li>
+          <li style="margin-bottom: 0; font-size: 16px; line-height: 1.5;">The exact whole dollar amount of your expected refund</li>
+        </ul>
+        
+        <div style="text-align: center; margin: 30px 0 25px;">
+          <a href="https://www.irs.gov/refunds" style="display: inline-block; background-color: #003865; color: white; text-decoration: none; padding: 12px 30px; border-radius: 4px; font-weight: 600; font-size: 16px;">Where's My Refund?</a>
+        </div>
+        
+        <div style="background-color: #fff1f0; border: 1px solid #ffccc7; border-radius: 4px; padding: 20px; margin-bottom: 25px;">
+          <h3 style="margin-top: 0; font-size: 16px; color: #cf1322; font-weight: 600;">Important Security Notice</h3>
+          <p style="margin: 0; font-size: 14px; line-height: 1.5;">The IRS will <strong>never</strong> initiate contact with taxpayers by email, text messages, or social media channels to request personal or financial information. Any communication claiming to be from the IRS that asks for immediate payment or personal information should be treated with caution.</p>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 0;">If you suspect fraudulent activity or have further questions about your refund status, please visit <a href="https://www.irs.gov/help/contact-your-local-irs-office" style="color: #003865; text-decoration: none;">Contact Your Local IRS Office</a> or call 800-829-1040.</p>
+      </div>
+      <div style="background-color: #f6f6f6; padding: 20px; text-align: center; font-size: 12px; color: #666666; border-top: 1px solid #e5e5e5;">
+        <p style="margin: 0 0 10px;">This is an official email from the Internal Revenue Service (IRS).</p>
+        <p style="margin: 0 0 10px;">For tax help, visit <a href="https://www.irs.gov" style="color: #003865; text-decoration: none;">www.irs.gov</a></p>
+        <p style="margin: 0;">Internal Revenue Service • 1111 Constitution Ave. NW • Washington, DC 20224</p>
+      </div>
+    </div>`,
     date: '2025-05-30T10:15:00',
     hasAttachment: false,
     isPhishing: false, // Legitimate informational email, points to official tool, includes warning about scams.
@@ -687,7 +1182,44 @@ export const emails: Email[] = [
     from: { name: 'DocuSign', email: 'dse@docusign.net' },
     to: 'user@example.com',
     subject: 'Please DocuSign: Project Proposal May 2025',
-    body: `<div><p>Hello,</p><p>Jennifer Miller (jennifer.miller@acme.com) has sent you a document to review and sign.</p><p><strong>Project Proposal May 2025</strong></p><p>Please click <a href="https://docusign.net/sign/proposal-may2025">here</a> to review and sign the document.</p><p>Thank you for using DocuSign!</p><p>This message contains information from DocuSign, Inc. which may be confidential or privileged.</p></div>`,
+    body: `<div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #ffffff; padding: 20px; text-align: center; border-bottom: 1px solid #e5e5e5;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/DocuSign_official_logo.svg/320px-DocuSign_official_logo.svg.png" alt="DocuSign" style="width: 180px;">
+      </div>
+      <div style="padding: 30px 25px; color: #333333;">
+        <div style="text-align: center; margin-bottom: 25px;">
+          <h2 style="margin: 0 0 15px; font-size: 20px; color: #333333; font-weight: 600;">Please review and sign</h2>
+          <p style="font-size: 16px; color: #666666; margin: 0;">Jennifer Miller (jennifer.miller@acme.com) has sent you a document to review and sign.</p>
+        </div>
+        
+        <div style="background-color: #f8f8f8; border: 1px solid #e5e5e5; border-radius: 4px; padding: 20px; margin-bottom: 25px;">
+          <p style="margin: 0 0 10px; font-weight: 600; font-size: 16px; color: #333333;">Project Proposal May 2025</p>
+          <div style="display: flex; align-items: center; margin-bottom: 15px;">
+            <div style="margin-right: 15px;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/PDF_file_icon.svg/64px-PDF_file_icon.svg.png" alt="PDF" style="width: 40px; height: 40px;">
+            </div>
+            <div>
+              <p style="margin: 0 0 3px; font-size: 14px; color: #666666;">10 pages</p>
+              <p style="margin: 0; font-size: 14px; color: #666666;">Expires: Jun 17, 2025</p>
+            </div>
+          </div>
+          
+          <div style="text-align: center;">
+            <a href="https://docusign.net/sign/proposal-may2025" style="display: inline-block; background-color: #00b7c3; color: white; text-decoration: none; padding: 12px 30px; border-radius: 4px; font-weight: 600; font-size: 16px;">REVIEW DOCUMENT</a>
+          </div>
+        </div>
+        
+        <div style="border-top: 1px solid #e5e5e5; padding-top: 20px; font-size: 14px; color: #666666;">
+          <p style="margin-bottom: 15px;">If you believe this email was sent to you in error, please contact the sender.</p>
+          <p style="margin: 0;">Thank you for using DocuSign!</p>
+        </div>
+      </div>
+      <div style="background-color: #f8f8f8; padding: 20px; text-align: center; font-size: 12px; color: #666666; border-top: 1px solid #e5e5e5;">
+        <p style="margin: 0 0 10px;">This message contains information from DocuSign, Inc. which may be confidential or privileged.</p>
+        <p style="margin: 0 0 10px;">If you are not the intended recipient, please advise the sender immediately and delete this message.</p>
+        <p style="margin: 0;">© DocuSign Inc. | 221 Main St. | Suite 1500 | San Francisco, CA 94105 | USA</p>
+      </div>
+    </div>`,
     date: '2025-05-17T09:10:00',
     hasAttachment: false,
     isPhishing: false,
@@ -698,7 +1230,71 @@ export const emails: Email[] = [
     from: { name: 'IT Service Desk', email: 'servicedesk@yourcompanydomain.com' },
     to: 'user@example.com',
     subject: 'Planned System Maintenance - [Action Required May Be Needed Post-Maintenance]',
-    body: `<div><p>Team,</p><p>Please be advised of planned system maintenance scheduled for Saturday, June 1st, from 2:00 AM to 6:00 AM EST. During this window, access to internal systems (CRM, Fileshares) may be intermittent.</p><p>While we anticipate a smooth transition, please verify connectivity to critical applications post-maintenance. If you encounter issues, refer to the troubleshooting guide on the intranet: <a href="https://internal.yourcompanydomain.com/it/help">IT Help Portal</a> or contact the Service Desk.</p><p>Regards,<br>IT Department</p></div>`,
+    body: `<div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #0046ad; padding: 25px; text-align: left;">
+        <h1 style="color: white; margin: 0; font-size: 20px; font-weight: 500;">IT SERVICE NOTIFICATION</h1>
+      </div>
+      <div style="padding: 30px 25px; color: #333333;">
+        <h2 style="margin-top: 0; font-size: 18px; color: #0046ad; font-weight: 600;">Planned System Maintenance</h2>
+        <p style="font-size: 15px; line-height: 1.5; margin-bottom: 20px;">Team,</p>
+        
+        <div style="background-color: #fffde7; border-left: 4px solid #fbc02d; padding: 15px; margin-bottom: 25px;">
+          <p style="margin: 0 0 5px; font-weight: 600; font-size: 15px;">⚠️ Important Notice</p>
+          <p style="margin: 0; font-size: 14;">During the maintenance window, access to internal systems may be intermittent.</p>
+        </div>
+        
+        <div style="background-color: #f8f8f8; border: 1px solid #e0e0e0; border-radius: 4px; padding: 20px; margin-bottom: 25px;">
+          <p style="margin: 0 0 15px; font-weight: 600; font-size: 15px;">Maintenance Details:</p>
+          <table style="width: 100%; border-collapse: collapse; margin-bottom: 15px;">
+            <tr>
+              <td style="padding: 8px 5px; border-bottom: 1px solid #e0e0e0; width: 120px; font-weight: 600; color: #555;">Date:</td>
+              <td style="padding: 8px 5px; border-bottom: 1px solid #e0e0e0;">Saturday, June 1st, 2025</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 5px; border-bottom: 1px solid #e0e0e0; font-weight: 600; color: #555;">Time:</td>
+              <td style="padding: 8px 5px; border-bottom: 1px solid #e0e0e0;">2:00 AM - 6:00 AM EST</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 5px; border-bottom: 1px solid #e0e0e0; font-weight: 600; color: #555;">Impact:</td>
+              <td style="padding: 8px 5px; border-bottom: 1px solid #e0e0e0;">CRM, File Shares, Internal Applications</td>
+            </tr>
+          </table>
+          
+          <div style="margin-bottom: 15px;">
+            <p style="margin: 0 0 10px; font-weight: 600; font-size: 14px;">Maintenance Timeline:</p>
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+              <div style="width: 12px; height: 12px; border-radius: 50%; background-color: #0046ad; margin-right: 10px;"></div>
+              <div style="font-size: 13px;">2:00 AM - Systems taken offline</div>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+              <div style="width: 12px; height: 12px; border-radius: 50%; background-color: #0046ad; margin-right: 10px;"></div>
+              <div style="font-size: 13px;">2:15 AM - Database updates applied</div>
+            </div>
+            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+              <div style="width: 12px; height: 12px; border-radius: 50%; background-color: #0046ad; margin-right: 10px;"></div>
+              <div style="font-size: 13px;">4:30 AM - System testing begins</div>
+            </div>
+            <div style="display: flex; align-items: center;">
+              <div style="width: 12px; height: 12px; border-radius: 50%; background-color: #0046ad; margin-right: 10px;"></div>
+              <div style="font-size: 13px;">6:00 AM - Systems fully operational</div>
+            </div>
+          </div>
+        </div>
+        
+        <p style="font-size: 15px; line-height: 1.5; margin-bottom: 20px;">While we anticipate a smooth transition, please verify connectivity to critical applications post-maintenance. If you encounter issues, refer to the troubleshooting guide on the intranet or contact the Service Desk.</p>
+        
+        <div style="text-align: center; margin: 30px 0 20px;">
+          <a href="https://internal.yourcompanydomain.com/it/help" style="display: inline-block; background-color: #0046ad; color: white; text-decoration: none; padding: 10px 24px; border-radius: 4px; font-weight: 600; font-size: 15px;">IT Help Portal</a>
+        </div>
+        
+        <p style="font-size: 15px; line-height: 1.5; margin-top: 30px;">Regards,<br>IT Department</p>
+        
+      </div>
+      <div style="background-color: #f4f4f4; padding: 20px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #e0e0e0;">
+        <p style="margin: 0 0 10px;">For urgent assistance during the maintenance window, contact the IT Service Desk at ext. 4500</p>
+        <p style="margin: 0;">Internal Communication - Company Confidential</p>
+      </div>
+    </div>`,
     date: '2025-05-31T16:00:00',
     hasAttachment: false,
     isPhishing: false,
@@ -709,7 +1305,65 @@ export const emails: Email[] = [
     from: { name: 'Salesforce', email: 'system@salesforce.com' },
     to: 'user@example.com',
     subject: 'Salesforce Release Readiness & Feature Updates',
-    body: `<div><p>Hi User,</p><p>Get ready for the Summer '25 release! We've prepared resources to help you and your team leverage the latest features.</p><p>Explore the release notes, watch overview videos, and register for webinars here: <a href="https://www.salesforce.com/releases/">Salesforce Releases</a></p><p>Prepare your organization for the upcoming automatic upgrade window specific to your instance.</p><p>Best regards,<br>The Salesforce Team</p></div>`,
+    body: `<div style="font-family: 'Salesforce Sans', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden;">
+      <div style="background-color: #0176d3; padding: 25px 25px 20px; text-align: left;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Salesforce.com_logo.svg/320px-Salesforce.com_logo.svg.png" alt="Salesforce" style="width: 150px;">
+      </div>
+      <div style="padding: 30px 25px; color: #032d60;">
+        <h2 style="margin-top: 0; font-size: 22px; color: #032d60; font-weight: 400;">Get ready for the Summer '25 Release</h2>
+        <p style="font-size: 16px; line-height: 1.6; margin-bottom: 25px;">Hi User,</p>
+        
+        <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px;">The Summer '25 release is coming soon! We've prepared resources to help you and your team leverage the latest features.</p>
+        
+        <div style="background-color: #f3f3f3; border-radius: 8px; padding: 20px; margin-bottom: 25px;">
+          <h3 style="margin-top: 0; color: #032d60; font-size: 18px; font-weight: 400; margin-bottom: 15px;">Key Summer '25 Highlights</h3>
+          
+          <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+            <div style="min-width: 30px; margin-right: 15px; text-align: center;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Lightningbolt.svg/64px-Lightningbolt.svg.png" alt="Lightning" style="width: 24px;">
+            </div>
+            <div>
+              <p style="margin: 0 0 5px; font-weight: 600; font-size: 16px;">Enhanced Lightning Experience</p>
+              <p style="margin: 0; font-size: 14px; color: #444;">Improved performance and user interface updates</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: flex-start; margin-bottom: 15px;">
+            <div style="min-width: 30px; margin-right: 15px; text-align: center;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Cloud_computing.svg/64px-Cloud_computing.svg.png" alt="Cloud" style="width: 24px;">
+            </div>
+            <div>
+              <p style="margin: 0 0 5px; font-weight: 600; font-size: 16px;">Flow Builder Improvements</p>
+              <p style="margin: 0; font-size: 14px; color: #444;">New automation capabilities and templates</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: flex-start;">
+            <div style="min-width: 30px; margin-right: 15px; text-align: center;">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Circle-icons-shield.svg/64px-Circle-icons-shield.svg.png" alt="Security" style="width: 24px;">
+            </div>
+            <div>
+              <p style="margin: 0 0 5px; font-weight: 600; font-size: 16px;">Enhanced Security Features</p>
+              <p style="margin: 0; font-size: 14px; color: #444;">Additional MFA options and session management tools</p>
+            </div>
+          </div>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.6; margin-bottom: 25px;">Prepare your organization for the upcoming automatic upgrade window specific to your instance.</p>
+        
+        <div style="margin: 30px 0; text-align: center;">
+          <a href="https://www.salesforce.com/releases/" style="display: inline-block; background-color: #0176d3; color: white; text-decoration: none; padding: 12px 25px; border-radius: 4px; font-weight: 400; font-size: 16px;">Explore Release Resources</a>
+        </div>
+        
+        <div style="border-top: 1px solid #e5e5e5; padding-top: 20px; margin-top: 30px;">
+          <p style="font-size: 16px; line-height: 1.6; margin-bottom: 0;">Best regards,<br>The Salesforce Team</p>
+        </div>
+      </div>
+      <div style="background-color: #f3f3f3; padding: 20px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #e5e5e5;">
+        <p style="margin: 0 0 10px;">©2025 Salesforce, Inc. All rights reserved.</p>
+        <p style="margin: 0;">Salesforce, Inc. Salesforce Tower, 415 Mission Street, 3rd Floor, San Francisco, CA 94105, United States</p>
+      </div>
+    </div>`,
     date: '2025-06-01T11:00:00',
     hasAttachment: false,
     isPhishing: false,
@@ -720,7 +1374,60 @@ export const emails: Email[] = [
     from: { name: 'Google Workspace Updates', email: 'workspace-updates-noreply@google.com' },
     to: 'user@example.com',
     subject: 'New security features rolling out for Google Drive',
-    body: `<div><p>Hello Google Workspace Admin,</p><p>We're enhancing security in Google Drive with new features for data loss prevention (DLP) and file sharing controls. These updates will begin rolling out to Rapid Release domains next week.</p><p>Review the upcoming changes and admin settings on the Workspace Updates blog: <a href="https://workspaceupdates.googleblog.com/">Workspace Updates</a></p><p>No immediate action is required, but familiarizing yourself with the new options is recommended.</p><p>The Google Workspace Team</p></div>`,
+    body: `<div style="font-family: 'Google Sans', Roboto, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
+      <div style="background-color: #f8f9fa; padding: 24px; text-align: left; border-bottom: 1px solid #e0e0e0;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/150px-Google_%22G%22_Logo.svg.png" alt="Google" style="width: 30px; margin-right: 10px; vertical-align: middle;">
+        <span style="font-size: 20px; font-weight: 500; color: #5f6368; vertical-align: middle;">Workspace</span>
+      </div>
+      <div style="padding: 30px 25px; color: #202124;">
+        <h2 style="margin-top: 0; font-size: 20px; color: #202124; font-weight: 500;">New security features for Google Drive</h2>
+        <p style="font-size: 16px; line-height: 1.6; margin-bottom: 25px; color: #3c4043;">Hello Google Workspace Admin,</p>
+        
+        <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px; color: #3c4043;">We're enhancing security in Google Drive with new features for data loss prevention (DLP) and file sharing controls. These updates will begin rolling out to Rapid Release domains next week.</p>
+        
+        <div style="background-color: #f8f9fa; border-radius: 8px; padding: 20px; margin-bottom: 25px; border: 1px solid #dadce0;">
+          <h3 style="margin-top: 0; font-size: 16px; color: #202124; font-weight: 500; margin-bottom: 15px;">Security Enhancements Include:</h3>
+          
+          <div style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+            <div style="background-color: #1a73e8; width: 8px; height: 8px; border-radius: 50%; margin: 6px 10px 0 0;"></div>
+            <div>
+              <p style="margin: 0; font-weight: 500; font-size: 14px; color: #3c4043;">Enhanced DLP Rules</p>
+              <p style="margin: 5px 0 0; font-size: 14px; color: #5f6368;">Detect sensitive content with improved pattern matching</p>
+            </div>
+          </div>
+          
+          <div style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+            <div style="background-color: #1a73e8; width: 8px; height: 8px; border-radius: 50%; margin: 6px 10px 0 0;"></div>
+            <div>
+              <p style="margin: 0; font-weight: 500; font-size: 14px; color: #3c4043;">Advanced Sharing Controls</p>
+              <p style="margin: 5px 0 0; font-size: 14px; color: #5f6368;">Set default sharing permissions at folder level</p>
+            </div>
+          </div>
+          
+          <div style="display: flex; align-items: flex-start;">
+            <div style="background-color: #1a73e8; width: 8px; height: 8px; border-radius: 50%; margin: 6px 10px 0 0;"></div>
+            <div>
+              <p style="margin: 0; font-weight: 500; font-size: 14px; color: #3c4043;">Security Dashboard Updates</p>
+              <p style="margin: 5px 0 0; font-size: 14px; color: #5f6368;">Improved visibility into external sharing and potential risks</p>
+            </div>
+          </div>
+        </div>
+        
+        <div style="background-color: #e8f0fe; border-radius: 8px; padding: 15px; margin-bottom: 25px; border-left: 4px solid #1a73e8;">
+          <p style="margin: 0; font-size: 14px; color: #1a73e8;">No immediate action is required, but familiarizing yourself with the new options is recommended.</p>
+        </div>
+        
+        <div style="text-align: center; margin: 30px 0 20px;">
+          <a href="https://workspaceupdates.googleblog.com/" style="display: inline-block; background-color: #1a73e8; color: white; text-decoration: none; padding: 10px 24px; border-radius: 4px; font-weight: 500; font-size: 14px;">View Detailed Updates</a>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.6; margin-bottom: 0; color: #3c4043;">The Google Workspace Team</p>
+      </div>
+      <div style="background-color: #f8f9fa; padding: 20px; text-align: center; font-size: 12px; color: #5f6368; border-top: 1px solid #e0e0e0;">
+        <p style="margin: 0 0 10px;">© 2025 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA</p>
+        <p style="margin: 0;">You received this mandatory email to update you about important changes to Google Workspace.</p>
+      </div>
+    </div>`,
     date: '2025-06-02T14:30:00',
     hasAttachment: false,
     isPhishing: false,
@@ -731,7 +1438,53 @@ export const emails: Email[] = [
     from: { name: 'American Express', email: 'AmericanExpress@member.americanexpress.com' },
     to: 'user@example.com',
     subject: 'Important Information About Changes to Your Cardmember Agreement',
-    body: `<div><p>Dear Valued Cardmember,</p><p>We are writing to inform you about upcoming changes to your Cardmember Agreement. These changes relate to arbitration provisions and will take effect on July 15, 2025.</p><p>You can review the full notice of changes by logging into your account online and navigating to the Document Center.</p><p>Access your account: <a href="https://www.americanexpress.com">American Express</a></p><p>If you have questions, please call the number on the back of your card.</p><p>Sincerely,<br>American Express Customer Care</p></div>`,
+    body: `<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+      <div style="background-color: #006fcf; padding: 25px; text-align: center;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/320px-American_Express_logo_%282018%29.svg.png" alt="American Express" style="width: 140px;">
+      </div>
+      <div style="padding: 30px 25px; color: #333333;">
+        <h2 style="margin-top: 0; font-size: 20px; color: #006fcf; font-weight: 500;">Changes to Your Cardmember Agreement</h2>
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">Dear Valued Cardmember,</p>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 20px;">We are writing to inform you about upcoming changes to your Cardmember Agreement. These changes relate to arbitration provisions and will take effect on July 15, 2025.</p>
+        
+        <div style="background-color: #f7f7f7; border-left: 4px solid #006fcf; padding: 15px; margin-bottom: 25px;">
+          <p style="margin: 0; font-size: 16px; line-height: 1.5;">You can review the full notice of changes by logging into your account online and navigating to the Document Center.</p>
+        </div>
+        
+        <div style="background-color: #f7f7f7; border-radius: 4px; padding: 20px; margin-bottom: 25px;">
+          <h3 style="margin-top: 0; font-size: 16px; color: #333333; font-weight: 600; margin-bottom: 15px;">Summary of Key Changes:</h3>
+          
+          <div style="margin-bottom: 15px;">
+            <p style="margin: 0 0 5px; font-weight: 600; font-size: 14px;">• Arbitration Provisions</p>
+            <p style="margin: 0 0 0 15px; font-size: 14px; color: #555;">Updates to the process for resolving disputes</p>
+          </div>
+          
+          <div style="margin-bottom: 15px;">
+            <p style="margin: 0 0 5px; font-weight: 600; font-size: 14px;">• Fee Schedule</p>
+            <p style="margin: 0 0 0 15px; font-size: 14px; color: #555;">Minor adjustments to certain transaction fees</p>
+          </div>
+          
+          <div>
+            <p style="margin: 0 0 5px; font-weight: 600; font-size: 14px;">• Digital Communications</p>
+            <p style="margin: 0 0 0 15px; font-size: 14px; color: #555;">Enhanced options for electronic delivery of statements</p>
+          </div>
+        </div>
+        
+        <div style="margin: 30px 0; text-align: center;">
+          <a href="https://www.americanexpress.com" style="display: inline-block; background-color: #006fcf; color: white; text-decoration: none; padding: 12px 30px; border-radius: 4px; font-weight: 600; font-size: 16px;">Access Your Account</a>
+        </div>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-bottom: 15px;">If you have questions, please call the number on the back of your card.</p>
+        
+        <p style="font-size: 16px; line-height: 1.5; margin-top: 30px; margin-bottom: 0;">Sincerely,<br>American Express Customer Care</p>
+      </div>
+      <div style="background-color: #f7f7f7; padding: 20px; text-align: center; font-size: 12px; color: #666; border-top: 1px solid #e5e5e5;">
+        <p style="margin: 0 0 10px;">Please do not reply to this email. This mailbox is not monitored.</p>
+        <p style="margin: 0 0 10px;">This email was sent to: user@example.com</p>
+        <p style="margin: 0;">© 2025 American Express. All Rights Reserved.</p>
+      </div>
+    </div>`,
     date: '2025-06-03T09:45:00',
     hasAttachment: false,
     isPhishing: false,
@@ -741,128 +1494,4 @@ export const emails: Email[] = [
   // ===================================
   // Expert difficulty emails - Phishing (5 total)
   // ===================================
-  {
-    id: '8', // Original DocuSign Phish
-    from: { name: 'DocuSign', email: 'documents@docus1gn.net' },
-    to: 'user@example.com',
-    subject: 'ACTION REQUIRED: Contract Documents Pending Signature',
-    body: `<div><p>Document Requiring Signature</p><p>A document has been sent to you for electronic signature through DocuSign by: Jennifer Miller (jennifer.miller@business-partners.org)</p><p><strong>PLEASE SIGN IMMEDIATELY: Payment Processing Agreement</strong></p><p>The document requires your signature before processing can be completed. Please <a href="http://docus1gn.net/sign/document/123456" data-real-url="http://docus1gn.net/sign/123456">review and sign</a> at your earliest convenience.</p><p>Note: This document will expire in 24 hours. After expiration, you will need to request a new signature document.</p><p><strong>IMPORTANT</strong>: Review all documents carefully before signing.</p><p>Thank you for using DocuSign!</p></div>`,
-    date: '2025-05-17T10:45:00',
-    hasAttachment: true,
-    attachmentName: 'Agreement_DocuSign.pdf.exe',
-    isPhishing: true,
-    phishingIndicators: [
-      { type: 'sender', description: 'The email domain "docus1gn.net" uses the number "1" instead of the letter "i" to mimic docusign.net' },
-      { type: 'link', description: 'The signature link points to a fake DocuSign domain' },
-      { type: 'attachment', description: 'The attachment has a suspicious double extension (.pdf.exe) disguising an executable as a PDF' },
-      { type: 'urgency', description: 'Multiple urgency indicators: "ACTION REQUIRED", "SIGN IMMEDIATELY", "will expire in 24 hours"' },
-      { type: 'domain', description: 'The sender email uses character substitution (number "1" for letter "i") to appear legitimate at first glance' }
-    ],
-    unread: true
-  },
-  {
-    id: 'expert-phish-2', // IT Mandatory Security Update (Bat file)
-    from: { name: 'IT Service Desk', email: 'security-updates@yourcompanydomain.com.systems' },
-    to: 'user@example.com',
-    subject: 'CRITICAL: Security Vulnerability Patch - Immediate Action Required',
-    body: `<div><p>To:</p><p>All Employees</p><p>Our security team has identified that your workstation requires an urgent security patch to address the recently discovered CVE-2025-03892 vulnerability affecting Windows systems. This zero-day vulnerability allows remote attackers to gain access to company resources.</p><p>The Information Security team has prepared a patch that must be installed immediately on all affected systems. As per our security protocols, this patch must be applied no later than EOD today.</p><p><strong>Required Action:</strong></p><p>1. Download and run the attached patch utility (<strong>SecurityPatch_May2025.bat</strong>)<br>2. Allow the utility to complete (approximately 2-3 minutes)<br>3. Restart your computer when prompted</p><p>Technical details about this vulnerability can be found in the <a href="http://yourcompanydomain.com.systems/it/security/bulletin-052025" data-real-url="http://yourcompanydomain.com.systems/security/bulletin/05-2025">Security Bulletin</a>.</p><p>If you have any questions, please contact the IT Service Desk at extension 5500.</p><p>Thank you for your prompt attention to this critical security matter.</p><p>Information Security Team<br>IT Department</p></div>`,
-    date: '2025-05-31T17:15:00',
-    hasAttachment: true,
-    attachmentName: 'SecurityPatch_May2025.bat',
-    isPhishing: true,
-    phishingIndicators: [
-        { type: 'sender', description: 'Email domain "yourcompanydomain.com.systems" uses a suspicious domain structure (TLD after the legitimate domain)' },
-        { type: 'attachment', description: 'Requests running a potentially malicious batch script (.bat), which could contain harmful code' },
-        { type: 'urgency', description: 'Creates extreme urgency with "zero-day vulnerability" and "EOD today" deadline' },
-        { type: 'link', description: 'Link to "Security Bulletin" points to suspicious domain' },
-        { type: 'request_sensitivity', description: 'Asks to run an executable file that could give attackers complete system access' }
-    ],
-    unread: true
-  },
-  {
-    id: 'expert-phish-3', // Salesforce Suspicious Login
-    from: { name: 'Salesforce Trust', email: 'security@salesforce-trust.security' },
-    to: 'user@example.com',
-    subject: 'Salesforce Security Alert: Unusual Login Activity Detected',
-    body: `<div><p>Dear Salesforce Customer,</p><p>Salesforce Trust has detected unusual login activity on your organization's Salesforce instance. Our security monitoring systems have identified potentially unauthorized access to sensitive Salesforce data.</p><p><strong>Activity details:</strong><br>• Instance: NA139<br>• Time: June 1, 2025 09:42 UTC<br>• IP Address: 118.91.XX.XX (Guangzhou, China)<br>• Accessed: Customer data, Lead records, Opportunity data</p><p>As a precautionary measure, we've temporarily restricted access to certain API functionalities. To restore full access and secure your instance, an administrator must verify their identity and review recent activities.</p><p>Please complete the security verification process:</p><p><a href="https://salesforce-trust.security/app/verify-identity" data-real-url="https://salesforce-trust.security/verify">Salesforce Security Verification</a></p><p>If you do not recognize this activity, please complete the verification immediately, after which we recommend changing all user passwords.</p><p>Salesforce Trust & Security</p></div>`,
-    date: '2025-06-01T12:30:00',
-    hasAttachment: false,
-    isPhishing: true,
-    phishingIndicators: [
-        { type: 'sender', description: 'Email domain "salesforce-trust.security" is not an official Salesforce domain' },
-        { type: 'link', description: 'Verification link points to a suspicious domain, not salesforce.com' },
-        { type: 'urgency', description: 'Creates urgency by claiming unauthorized access to sensitive customer data' },
-        { type: 'generic_greeting', description: 'Uses generic "Dear Salesforce Customer" instead of organization name' },
-        { type: 'request_sensitivity', description: 'Asks for administrator verification, which likely involves entering credentials' }
-    ],
-    unread: true
-  },
-  {
-    id: 'expert-phish-4', // Google Workspace Storage Quota (Docm file)
-    from: { name: 'Google Workspace Admin', email: 'workspace-storage@google.administrator-tools.com' },
-    to: 'user@example.com',
-    subject: 'Critical: Google Workspace Storage Quota Exceeded (90%+)',
-    body: `<div><p>Google Workspace Administrator Notice</p><p>Your organization's Google Workspace storage allocation is currently at 93% capacity. When storage reaches 100%, your organization may experience service disruptions including:</p><ul><li>Inability to receive or send emails</li><li>Document creation and editing limitations</li><li>File syncing failures across Drive</li><li>Calendar and Meet functionality issues</li></ul><p>As the designated administrator contact, please take immediate action to prevent service interruption. You have two options:</p><p>1. <a href="https://google.administrator-tools.com/workspace/billing/upgrade" data-real-url="https://google.administrator-tools.com/workspace/upgrade">Upgrade your storage plan</a><br>2. Complete the attached storage management form to request temporary quota increase (<strong>'Workspace_Storage_Request.docm'</strong>)</p><p>Note: The attached document contains automated macros to securely communicate with the Google Workspace API. Please enable macros when prompted.</p><p>Google Workspace Administration</p></div>`,
-    date: '2025-06-02T15:45:00',
-    hasAttachment: true,
-    attachmentName: 'Workspace_Storage_Request.docm',
-    isPhishing: true,
-    phishingIndicators: [
-        { type: 'sender', description: 'Email domain "google.administrator-tools.com" is not an official Google domain' },
-        { type: 'attachment', description: 'Contains a macro-enabled Word document (.docm) and explicitly asks to enable macros' },
-        { type: 'link', description: 'Storage plan upgrade link points to a suspicious domain' },
-        { type: 'urgency', description: 'Creates urgency by warning about imminent service disruptions' },
-        { type: 'request_sensitivity', description: 'Requests enabling macros, which could execute malicious code' }
-    ],
-    unread: true
-  },
-  {
-    id: 'expert-phish-5', // American Express Transaction Review
-    from: { name: 'American Express Fraud Protection', email: 'security-alerts@americanexpress-secureservice.com' },
-    to: 'user@example.com',
-    subject: 'AMEX Security Alert: Unusual Charges Require Verification',
-    body: `<div><p>Dear American Express Member,</p><p>Our fraud detection system has identified unusual spending patterns on your American Express account ending in ****4281.</p><p><strong>Recent transactions flagged for review:</strong></p><table style="border-collapse: collapse; width: 100%; margin: 10px 0; border: 1px solid #ccc;"><tr style="background-color: #f2f2f2;"><th style="padding: 8px; text-align: left; border: 1px solid #ccc;">Date</th><th style="padding: 8px; text-align: left; border: 1px solid #ccc;">Merchant</th><th style="padding: 8px; text-align: left; border: 1px solid #ccc;">Amount</th></tr><tr><td style="padding: 8px; border: 1px solid #ccc;">Jun 3, 2025</td><td style="padding: 8px; border: 1px solid #ccc;">LONDON LUXURY RETAIL LTD</td><td style="padding: 8px; border: 1px solid #ccc;">$3,452.00</td></tr><tr><td style="padding: 8px; border: 1px solid #ccc;">Jun 3, 2025</td><td style="padding: 8px; border: 1px solid #ccc;">EMIRATES AIRLINES</td><td style="padding: 8px; border: 1px solid #ccc;">$4,890.75</td></tr></table><p>For your protection, we have temporarily suspended charging privileges on your card. To verify these transactions and restore your card access:</p><p><a href="https://americanexpress-secureservice.com/account/verify-charges" data-real-url="https://americanexpress-secureservice.com/verify">Verify Transactions</a></p><p>If these transactions are unauthorized, you can report them as fraudulent during the verification process.</p><p>Please complete verification within 24 hours to avoid any inconvenience when using your card.</p><p>American Express Customer Protection</p></div>`,
-    date: '2025-06-03T11:00:00',
-    hasAttachment: false,
-    isPhishing: true,
-    phishingIndicators: [
-        { type: 'sender', description: 'Email domain "americanexpress-secureservice.com" is not an official American Express domain' },
-        { type: 'link', description: 'Verification link points to a suspicious domain, not americanexpress.com' },
-        { type: 'urgency', description: 'Creates urgency with suspended card privileges and 24-hour deadline' },
-        { type: 'generic_greeting', description: 'Uses generic "Dear American Express Member" greeting' },
-        { type: 'request_sensitivity', description: 'Prompts for verification of high-value transactions, likely leading to credential theft' }
-    ],
-    unread: true
-  },
-  {
-    id: 'google-phish-new', 
-    from: { name: 'Google', email: 'no-reply.accounts.google@wpereview.org' }, // Suspicious domain
-    to: 'user@example.com',
-    subject: 'Your account is in danger',
-    body: `<div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #e0e0e0; max-width: 600px; margin: auto;">
-            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google Logo" style="width: 92px; height: 30px; margin-bottom: 20px;">
-            <p style="margin-bottom: 15px;">Hi</p>
-            <p style="margin-bottom: 15px;">Our security system detected several unexpected sign-in attempts on your account. To improve your account safety use our new official application "Google Defender".</p>
-            <a href="http://google-defender-install.com/setup.exe" data-real-url="http://malware-site.xyz/googledfndr.exe" style="display: inline-block; background-color: #4285F4; color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: bold; margin-bottom: 20px;">Install Google Defender</a>
-            <div style="display: flex; align-items: center; margin-top: 20px; border-top: 1px solid #e0e0e0; padding-top: 15px;">
-              <img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png" alt="Gmail logo" style="width: 28px; height: 21px; margin-right: 10px;">
-              <span style="font-size: 14px; color: #5f6368;">Best, The Mail Team</span>
-            </div>
-           </div>
-           <div style="text-align: center; font-size: 12px; color: #9aa0a6; margin-top: 15px;">
-             2016 Mail Corp. 1997 Amphitheatre Parkway, Mountain View, CA 92042
-           </div>`,
-    date: '2025-08-19T10:00:00', // Example date
-    hasAttachment: false, // The threat is the link/button
-    isPhishing: true,
-    phishingIndicators: [
-      { type: 'sender', description: 'Sender email uses a non-google domain (wpereview.org)' },
-      { type: 'urgency', description: 'Claims account is in danger to prompt quick action.' },
-      { type: 'link', description: 'Button links to a suspicious download URL (google-defender-install.com / malware-site.xyz). Google Defender is not a real Google app.' },
-      { type: 'generic_greeting', description: 'Uses a very generic "Hi".' },
-      { type: 'grammar', description: 'Minor grammatical awkwardness ("account safety use").' },
-      { type: 'domain', description: 'Signature mentions "Mail Corp." and uses a Gmail logo, but the sender isn\'t google.com.' }
-    ],
-    unread: true
-  }
 ];

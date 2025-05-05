@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Mail, AlertCircle, Paperclip } from 'lucide-react';
 import { Email } from '../types';
 
@@ -9,8 +9,26 @@ interface EmailListProps {
 }
 
 const EmailList: React.FC<EmailListProps> = ({ emails, selectedEmailId, onSelectEmail }) => {
+  // Create a ref for the container to scroll
+  const listContainerRef = useRef<HTMLDivElement>(null);
+  // Create a map of refs for individual email items
+  const emailRefs = useRef<{ [id: string]: HTMLDivElement | null }>({});
+  
+  // Scroll selected email into view when selectedEmailId changes
+  useEffect(() => {
+    if (selectedEmailId && emailRefs.current[selectedEmailId]) {
+      emailRefs.current[selectedEmailId]?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }, [selectedEmailId]);
+
   return (
-    <div className="w-full h-full border-r border-gray-200 bg-gray-50 overflow-y-auto">
+    <div 
+      ref={listContainerRef}
+      className="w-full h-full border-r border-gray-200 bg-gray-50 overflow-y-auto"
+    >
       <div className="p-4 border-b border-gray-200 bg-gray-100">
         <h2 className="text-lg font-semibold text-gray-700">Inbox</h2>
         <p className="text-sm text-gray-500">{emails.length} messages</p>
@@ -20,6 +38,7 @@ const EmailList: React.FC<EmailListProps> = ({ emails, selectedEmailId, onSelect
         {emails.map((email) => (
           <div 
             key={email.id}
+            ref={el => emailRefs.current[email.id] = el}
             onClick={() => onSelectEmail(email.id)}
             className={`p-4 cursor-pointer transition duration-150 ${
               selectedEmailId === email.id 

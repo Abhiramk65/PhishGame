@@ -51,6 +51,9 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
   };
 
   const handleContinue = () => {
+    // Clear any existing feedback
+    clearFeedback();
+    
     // Use emails directly from context
     const currentIndex = emails.findIndex(email => email.id === selectedEmailId);
     let nextEmailId: string | null = null;
@@ -76,6 +79,12 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
     // Stay on the current email or handle as completed (useEffect handles completion message)
     // If there was an unread email found, select it.
     if (nextEmailId) {
+        // On mobile, when we continue to the next email, ensure we're still in detail view
+        if (window.innerWidth < 768) { // 768px is the md breakpoint in Tailwind
+            setShowEmailDetail(true);
+        }
+        
+        // Update the selected email - this will trigger the scroll in EmailList component
         setSelectedEmailId(nextEmailId);
     } else {
         // Optional: If no *other* unread email exists, maybe select the next email regardless of read status

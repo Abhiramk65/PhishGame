@@ -2,7 +2,11 @@ import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, BookOpen, Shield, AlertTriangle, BookMarked, Mail, Link, FileText, Eye, Bell, FileWarning, ExternalLink, Play, ArrowRight, CheckCircle } from 'lucide-react';
 import { tutorialSteps, phishingTips } from '../data/tips';
 
-const Tutorial: React.FC = () => {
+interface TutorialProps {
+  onNavigate?: (path: string) => void;
+}
+
+const Tutorial: React.FC<TutorialProps> = ({ onNavigate }) => {
   const [currentStep, setCurrentStep] = useState(0);
   const [showTips, setShowTips] = useState(false);
   
@@ -51,6 +55,13 @@ const Tutorial: React.FC = () => {
     return <CheckCircle className="h-8 w-8 text-blue-600 mr-3" />;
   };
   
+  // Handler to navigate to inbox
+  const handleStartChallenge = () => {
+    if (onNavigate) {
+      onNavigate('inbox');
+    }
+  };
+
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <div className="flex justify-between items-center mb-6">
@@ -100,7 +111,7 @@ const Tutorial: React.FC = () => {
           </div>
           
           {/* Content Card */}
-          <div className="mb-6 bg-blue-50 p-6 rounded-lg border border-blue-100 shadow-sm">
+          <div className="mb-6 bg-blue-50 p-6 rounded-lg border border-blue-100 shadow-sm min-h-96">
             <div className="flex items-start">
               {getStepIcon(currentStep)}
               <div>
@@ -218,7 +229,10 @@ const Tutorial: React.FC = () => {
           Apply what you've learned to identify real phishing attempts and earn points!
         </p>
         <div className="flex justify-center">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md transition flex items-center">
+          <button 
+            onClick={handleStartChallenge}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md transition flex items-center cursor-pointer"
+          >
             Start the Challenge
             <ArrowRight className="ml-2 h-4 w-4" />
           </button>

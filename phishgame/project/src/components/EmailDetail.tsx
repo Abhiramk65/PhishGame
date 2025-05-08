@@ -207,41 +207,41 @@ const EmailDetail: React.FC<EmailDetailProps> = ({ email, onContinue }) => {
           }}
         >
           <div className="flex items-start">
-             {gameState.feedback.isCorrect ? (
+            {gameState.feedback.isCorrect ? (
                 <Shield className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
-             ) : (
+            ) : (
                 <AlertTriangle className="h-6 w-6 text-red-500 mr-3 mt-1 flex-shrink-0" />
-             )}
-             <div>
-                <h3 className={`font-semibold text-lg ${gameState.feedback.isCorrect ? 'text-green-700' : 'text-red-700'}`}>
-                 {gameState.feedback.message}
-                </h3>
-                <div className="mt-2">
-                 {gameState.feedback.details.map((detail, index) => (
-                    <p key={index} className="text-sm mb-1">{detail}</p>
-                 ))}
-                </div>
+            )}
+            <div>
+              <h3 className={`font-semibold text-lg ${gameState.feedback.isCorrect ? 'text-green-700' : 'text-red-700'}`}>
+                {gameState.feedback.message}
+              </h3>
+              <div className="mt-2">
+                {gameState.feedback.details.map((detail, index) => (
+                  <p key={index} className="text-sm mb-1">{detail}</p>
+                ))}
+              </div>
                 {email?.isPhishing && email.phishingIndicators && (
-                 <div className="mt-4">
-                    <h4 className="font-medium mb-2">Phishing indicators:</h4>
-                    <ul className="text-sm list-disc pl-5 space-y-1">
-                     {email.phishingIndicators.map((indicator, index) => (
-                        <li key={index}>{indicator.description}</li>
-                     ))}
-                    </ul>
-                 </div>
-                )}
-                <button 
-                 onClick={handleContinue}
+                <div className="mt-4">
+                  <h4 className="font-medium mb-2">Phishing indicators:</h4>
+                  <ul className="text-sm list-disc pl-5 space-y-1">
+                    {email.phishingIndicators.map((indicator, index) => (
+                      <li key={index}>{indicator.description}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              <button 
+                onClick={handleContinue}
                  className={`mt-4 px-6 py-3 rounded-full font-medium w-full sm:w-auto ${
-                    gameState.feedback.isCorrect 
+                  gameState.feedback.isCorrect 
                     ? 'bg-green-600 hover:bg-green-700'
                     : 'bg-red-600 hover:bg-red-700'
-                 } text-white transition`}
-                >
-                 Continue
-                </button>
-             </div>
+                } text-white transition`}
+              >
+                Continue
+              </button>
+            </div>
           </div>
         </div>
       )}

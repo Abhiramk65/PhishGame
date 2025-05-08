@@ -23,13 +23,13 @@ const GameStatus: React.FC = () => {
         <XCircle className="h-4 w-4 text-red-600 mr-1.5" />
         <span className="text-sm font-medium text-gray-700">Incorrect: {user.incorrectIdentifications}</span>
       </div>
-
+      
       {/* Accuracy */}
       <div className="flex items-center bg-white px-3 py-1.5 rounded-lg shadow-sm border border-gray-200">
         <BarChart className="h-4 w-4 text-blue-600 mr-1.5" />
         <span className="text-sm font-medium text-gray-700">Accuracy: {accuracy}%</span>
       </div>
-
+      
     </div>
   );
 };

@@ -28,7 +28,7 @@ function AppContent() {
         
         {currentPath === 'tutorial' && (
           <div className="container mx-auto px-4 py-8">
-            <Tutorial />
+            <Tutorial onNavigate={handleNavigate} />
           </div>
         )}
       </main>
@@ -50,3 +50,5 @@ export default function App() {
     </GameProvider>
   );
 }
+
+// This is a comment line

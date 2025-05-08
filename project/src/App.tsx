@@ -50,3 +50,5 @@ export default function App() {
     </GameProvider>
   );
 }
+
+// This is a comment line

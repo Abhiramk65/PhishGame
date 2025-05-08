@@ -15,7 +15,7 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
   const [selectedEmailId, setSelectedEmailId] = useState<string | null>(null);
   const [showCompletionMessage, setShowCompletionMessage] = useState(false);
   const [showEmailDetail, setShowEmailDetail] = useState(false); // For mobile view toggling
-
+  
   useEffect(() => {
     // Select the first unread email if available when emails from context change
     const firstUnread = emails.find(email => email.unread);
@@ -35,9 +35,9 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
       setShowCompletionMessage(false);
     }
   }, [emails]);
-
+  
   const selectedEmail = emails.find(email => email.id === selectedEmailId) || null;
-
+    
   const handleSelectEmail = (emailId: string) => {
     if (emailId !== selectedEmailId) { // Only clear feedback if selecting a DIFFERENT email
         clearFeedback(); // Clear feedback when a new email is selected
@@ -86,12 +86,12 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
         
         // Update the selected email - this will trigger the scroll in EmailList component
         setSelectedEmailId(nextEmailId);
-    } else {
+      } else {
         // Optional: If no *other* unread email exists, maybe select the next email regardless of read status
         // to allow reviewing already-read emails after the last unread one is done.
         // Or just stay on the current one. Let's stay for simplicity.
         // setSelectedEmailId(emails[(currentIndex + 1) % emails.length]?.id || null);
-    }
+      }
 
     // No need to check completion here, the useEffect [emails] handles it
   };
@@ -104,7 +104,7 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
     setSelectedEmailId(null); // Reset selection to allow the effect to pick the first unread
     setShowEmailDetail(false); // Go back to inbox view on reset
   }
-
+  
   return (
     <div className="max-w-6xl mx-auto px-4 py-6">
       <div className="mb-6 flex flex-col sm:flex-row justify-between items-start sm:items-center">
@@ -113,7 +113,7 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
         </div>
         <GameStatus />
       </div>
-
+      
       {showCompletionMessage ? (
         <div className="bg-white rounded-lg shadow-md p-8 text-center">
           <div className="flex justify-center mb-4">
@@ -127,13 +127,13 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
             Great job staying vigilant!
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button
+            <button 
               onClick={handleResetInbox}
               className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-md transition"
             >
               Start Over
             </button>
-            <button
+            <button 
               onClick={() => onNavigate('home')}
               className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-2 px-6 rounded-md transition"
             >
@@ -145,11 +145,11 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
         <div className="flex flex-col md:flex-row gap-4 min-h-[calc(100vh-200px)] md:h-[calc(100vh-180px)]">
           {/* Email List - Always display on desktop, but conditionally on mobile */}
           <div className={`w-full md:w-1/3 md:block ${showEmailDetail ? 'hidden' : 'block'}`}>
-            <EmailList
+                <EmailList 
               emails={emails}
-              selectedEmailId={selectedEmailId}
-              onSelectEmail={handleSelectEmail}
-            />
+                  selectedEmailId={selectedEmailId}
+                  onSelectEmail={handleSelectEmail}
+                />
           </div>
           
           {/* Email Detail - Always display on desktop, but conditionally on mobile */}
@@ -167,13 +167,13 @@ const InboxPage: React.FC<InboxPageProps> = ({ onNavigate }) => {
               </div>
             )}
             
-            <EmailDetail
-              email={selectedEmail}
-              onContinue={handleContinue}
-            />
-          </div>
-        </div>
-      )}
+                <EmailDetail 
+                  email={selectedEmail} 
+                  onContinue={handleContinue}
+                />
+              </div>
+            </div>
+          )}
     </div>
   );
 };

@@ -25,15 +25,15 @@ const GameContext = createContext<GameContextProps | undefined>(undefined);
 export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User>(mockUser);
   const [gameState, setGameState] = useState<GameState>({
-    isActive: false,
-    isPaused: false,
-    isCompleted: false,
-    feedback: {
-      show: false,
-      isCorrect: false,
-      message: '',
-      details: []
-    }
+  isActive: false,
+  isPaused: false,
+  isCompleted: false,
+  feedback: {
+    show: false,
+    isCorrect: false,
+    message: '',
+    details: []
+  }
   });
   const [availableEmails, setAvailableEmails] = useState<Email[]>(emails); // Initially, all emails are available
 
@@ -58,16 +58,16 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
       feedback: { show: false, isCorrect: false, message: '', details: [] }
     });
   };
-
+  
   // Function to mark an email as read
   const markEmailAsRead = useCallback((emailId: string) => {
-    setAvailableEmails(prevEmails =>
-      prevEmails.map(email =>
+    setAvailableEmails(prevEmails => 
+      prevEmails.map(email => 
         email.id === emailId ? { ...email, unread: false } : email
       )
     );
   }, []);
-
+  
   // Function to clear the feedback display
   const clearFeedback = useCallback(() => {
     setGameState(prev => ({
@@ -79,7 +79,7 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Removed trackChallengeProgress function
 
   // Removed getChallengeProgress function
-
+  
   // Handle email identification
   const identifyEmail = useCallback((emailId: string | null, userSelectedPhishing: boolean) => {
     // If emailId is null, it means we're continuing after feedback
@@ -93,29 +93,29 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }));
       return;
     }
-
+    
     // Mark the email as read when identifying it
     markEmailAsRead(emailId);
-
+    
     const identifiedEmail = availableEmails.find(email => email.id === emailId);
-
+    
     if (!identifiedEmail) return;
-
+    
     const isCorrect = identifiedEmail.isPhishing === userSelectedPhishing;
-
+    
     // Update game state with feedback
     setGameState(prev => ({
       ...prev,
       feedback: {
         show: true,
         isCorrect,
-        message: isCorrect
+        message: isCorrect 
           ? `Correct!`
           : `Incorrect. This email is ${identifiedEmail.isPhishing ? 'a phishing attempt' : 'legitimate'}.`,
         details: getFeedbackDetails(identifiedEmail, isCorrect)
       }
     }));
-
+    
     // Update user stats
     setUser(prev => {
       const updatedUser = {
@@ -124,7 +124,7 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
         correctIdentifications: isCorrect ? prev.correctIdentifications + 1 : prev.correctIdentifications,
         incorrectIdentifications: !isCorrect ? prev.incorrectIdentifications + 1 : prev.incorrectIdentifications,
       };
-
+      
       // Update achievements (Level/Score based checks removed)
       const achievements = [...prev.achievements];
       // First identification achievement
@@ -147,8 +147,8 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (updatedUser.totalEmailsReviewed >= 10 && (updatedUser.correctIdentifications / updatedUser.totalEmailsReviewed) >= 0.9 && !achievements[2].unlocked) {
         achievements[2] = {
             ...achievements[2],
-            unlocked: true,
-            unlockedAt: new Date().toISOString()
+          unlocked: true,
+          unlockedAt: new Date().toISOString()
         };
       }
       // Remove Achievement checks based on level/score
@@ -171,17 +171,17 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
       */
       // Add other non-score/level achievement checks here...
-
+      
       return {
         ...updatedUser,
         achievements
       };
     });
-
+    
   }, [markEmailAsRead, availableEmails]); // Removed trackChallengeProgress from dependencies
 
   // Removed calculatePoints function (using fixed value now)
-
+  
   // Helper function to generate feedback details (remains the same)
   const getFeedbackDetails = (email: Email, isCorrect: boolean): string[] => {
     if (isCorrect) {
@@ -198,9 +198,9 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
     }
   };
-
+  
   return (
-    <GameContext.Provider
+    <GameContext.Provider 
       value={{
         user,
         gameState,

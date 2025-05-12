@@ -1400,7 +1400,7 @@ export const emails: Email[] = [
     subject: 'New security features rolling out for Google Drive',
     body: `<div style="font-family: 'Google Sans', Roboto, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
       <div style="background-color: #f8f9fa; padding: 24px; text-align: left; border-bottom: 1px solid #e0e0e0;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/150px-Google_%22G%22_Logo.svg.png" alt="Google" style="width: 30px; margin-right: 10px; vertical-align: middle;">
+        <img src="https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_color_74x24dp.png" alt="Google" style="height: 24px; margin-right: 10px; vertical-align: middle;">
         <span style="font-size: 20px; font-weight: 500; color: #5f6368; vertical-align: middle;">Workspace</span>
       </div>
       <div style="padding: 30px 25px; color: #202124;">

@@ -325,7 +325,11 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'Security Alert: Urgent Account Verification Required',
     body: `<div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; max-width: 600px; margin: auto;">
+<<<<<<< HEAD
             <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Bank_of_America_logo.svg" alt="Bank of America Logo" style="width: 150px; margin-bottom: 25px;">
+=======
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Bank_of_America_logo.svg/2560px-Bank_of_America_logo.svg.png" alt="Bank of America Logo" style="width: 150px; margin-bottom: 25px;">
+>>>>>>> 2cf5bc7565df977324be440446a4175e0d405224
             <h3 style="color: #D81E05; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Account Security Notice</h3>
             <p style="color: #333; margin-bottom: 15px;">Dear valued customer,</p>
             <p style="color: #333; margin-bottom: 15px;">As part of our continuous security measures, we have detected unusual activity associated with your Bank of America account.</p>
@@ -333,7 +337,11 @@ export const emails: Email[] = [
               <a href="https://secure-bankofamerica.com/verify" data-real-url="https://secure-bankofamerica.com/verify" style="display: inline-block; background-color: #D81E05; color: white; padding: 11px 22px; text-decoration: none; border-radius: 4px; font-weight: bold;">clicking here</a> and confirming your identity.
             </p>
             <p style="color: #333; margin-bottom: 15px;">This verification process is mandatory. Failure to complete this verification within 24 hours will result in your account being temporarily suspended.</p>
+<<<<<<< HEAD
             <p style="font-size: 12px; color: #555;">If you need assistance, please call our customer service at 1-800-XXX-XXXX</p>
+=======
+            <p style="font-size: 12px; color: #555;">If you need assistance, please call our customer service at 1-800-XXX-XXXX (Do not call this number - it is fake).</p>
+>>>>>>> 2cf5bc7565df977324be440446a4175e0d405224
             <p style="font-size: 11px; color: #777; margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px;">Bank of America, Member FDIC.</p>
            </div>`,
     date: '2025-05-22T11:30:00',
@@ -358,14 +366,22 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'Your Bank of America statement is ready',
     body: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
+<<<<<<< HEAD
       <div style="background-color:rgb(255, 255, 255); padding: 20px; text-align: left;">
+=======
+      <div style="background-color: #e31836; padding: 20px; text-align: left;">
+>>>>>>> 2cf5bc7565df977324be440446a4175e0d405224
         <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Bank_of_America_logo.svg" alt="Bank of America" style="width: 200px;">
       </div>
       <div style="padding: 30px 25px; color: #333;">
         <h2 style="margin-top: 0; font-size: 20px; color: #333; font-weight: 500;">Your statement is ready to view</h2>
         <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">Hello,</p>
         
+<<<<<<< HEAD
         <div style="background-color: #f8f8f8; border-left: 4px solidrgb(255, 255, 255); padding: 15px; margin-bottom: 25px;">
+=======
+        <div style="background-color: #f8f8f8; border-left: 4px solid #e31836; padding: 15px; margin-bottom: 25px;">
+>>>>>>> 2cf5bc7565df977324be440446a4175e0d405224
           <p style="margin: 0 0 10px; font-weight: bold;">Statement information:</p>
           <p style="margin: 0 0 5px;">Account: ••••••••<span style="font-weight: 600;">4567</span></p>
           <p style="margin: 0 0 5px;">Statement period: April 15 - May 15, 2025</p>
@@ -399,6 +415,7 @@ export const emails: Email[] = [
     from: { name: 'Amazon Web Services', email: 'aws-marketing@amazon.com' },
     to: 'user@example.com',
     subject: 'New AWS Service Announcement: Amazon Neptune Global Database',
+<<<<<<< HEAD
     body: `<div style="font-family: 'Amazon Ember', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 6px; overflow: hidden; background: #fff;">
       <div style="background-color: #232f3e; padding: 24px 0 16px 0; text-align: center; border-bottom: 1px solid #e5e5e5;">
         <img src="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png" alt="AWS" style="width: 120px;">
@@ -424,6 +441,9 @@ export const emails: Email[] = [
         <p style="margin: 0;">© 2025 Amazon Web Services, Inc. or its affiliates. All rights reserved.</p>
       </div>
     </div>`,
+=======
+    body: `<div><p>Dear AWS Customer,</p><p>We're excited to announce Amazon Neptune Global Database, allowing you to build graph applications across multiple AWS Regions.</p><p>Learn more about the benefits and use cases on our blog: <a href="https://aws.amazon.com/blogs/database/">AWS Database Blog</a></p><p>Sincerely,<br>The Amazon Web Services Team</p></div>`,
+>>>>>>> 2cf5bc7565df977324be440446a4175e0d405224
     date: '2025-05-23T14:00:00',
     hasAttachment: false,
     isPhishing: false,
@@ -819,7 +839,11 @@ export const emails: Email[] = [
     subject: 'Important Information Regarding Your Account',
     body: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
       <div style="background-color: #0f287f; padding: 25px; text-align: left;">
+<<<<<<< HEAD
         <img src="https://1000logos.net/wp-content/uploads/2021/05/Chase-logo.png" alt="Chase" style="width: 140px;">
+=======
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Chase_logo_2007.svg/320px-Chase_logo_2007.svg.png" alt="Chase" style="width: 140px;">
+>>>>>>> 2cf5bc7565df977324be440446a4175e0d405224
       </div>
       <div style="padding: 30px 25px; color: #333333;">
         <h2 style="margin-top: 0; font-size: 20px; color: #0f287f; font-weight: 600;">Policy Updates for Your Chase Account</h2>
@@ -973,7 +997,11 @@ export const emails: Email[] = [
         <table style="width: 100%;" cellpadding="0" cellspacing="0">
           <tr>
             <td style="vertical-align: middle; width: 50px;">
+<<<<<<< HEAD
               <img src="https://cdn-icons-png.flaticon.com/512/5968/5968204.png" alt="IRS Logo" style="width: 50px; height: 50px; display: block;">
+=======
+              <img src="https://www.irs.gov/themes/custom/equity/logo.svg" alt="IRS Logo" style="width: 50px; height: 50px; display: block;">
+>>>>>>> 2cf5bc7565df977324be440446a4175e0d405224
             </td>
             <td style="vertical-align: middle; padding-left: 15px;">
               <h1 style="color: white; margin: 0; font-size: 18px; font-weight: 500;">Internal Revenue Service</h1>
@@ -1059,7 +1087,11 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'Chase Security Alert: Verify Recent Transaction',
     body: `<div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; max-width: 600px; margin: auto;">
+<<<<<<< HEAD
             <img src="https://1000logos.net/wp-content/uploads/2021/05/Chase-logo.png" alt="Chase Logo" style="width: 100px; margin-bottom: 25px;">
+=======
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Chase_logo_2007.svg" alt="Chase Logo" style="width: 100px; margin-bottom: 25px;">
+>>>>>>> 2cf5bc7565df977324be440446a4175e0d405224
             <h3 style="color: #125BC0; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Account Security Alert</h3>
             <p style="color: #333; margin-bottom: 15px;">Dear Valued Chase Customer,</p>
             <p style="color: #333; margin-bottom: 15px;">For your protection, we have temporarily limited online access to your account. Our fraud monitoring system has detected unusual transaction activity:</p>
@@ -1167,7 +1199,11 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'IRS: Your Tax Refund Is Pending Additional Verification',
     body: `<div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #a9a9a9; max-width: 600px; margin: auto; background-color: #ffffff;">
+<<<<<<< HEAD
             <img src="https://cdn-icons-png.flaticon.com/512/5968/5968204.png" alt="IRS Logo" style="width: 50px; height: 50px; margin-bottom: 20px;">
+=======
+            <img src="https://www.irs.gov/themes/custom/equity/logo.svg" alt="IRS Logo" style="width: 50px; height: 50px; margin-bottom: 20px;">
+>>>>>>> 2cf5bc7565df977324be440446a4175e0d405224
             <h3 style="color: #003f87; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 20px;">Tax Refund Verification Required</h3>
             <p style="margin-bottom: 15px;">Dear Taxpayer,</p>
             <p style="margin-bottom: 15px;">The Internal Revenue Service has processed your 2024 tax return and determined that you are eligible for a refund of <strong>$1,873.42</strong>.</p>
@@ -1208,7 +1244,11 @@ export const emails: Email[] = [
     subject: 'Please DocuSign: Project Proposal May 2025',
     body: `<div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
       <div style="background-color: #ffffff; padding: 20px; text-align: center; border-bottom: 1px solid #e5e5e5;">
+<<<<<<< HEAD
         <img src="https://cdn.worldvectorlogo.com/logos/docusign-1.svg" alt="DocuSign" style="width: 180px;">
+=======
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/DocuSign_official_logo.svg/320px-DocuSign_official_logo.svg.png" alt="DocuSign" style="width: 180px;">
+>>>>>>> 2cf5bc7565df977324be440446a4175e0d405224
       </div>
       <div style="padding: 30px 25px; color: #333333;">
         <div style="text-align: center; margin-bottom: 25px;">
@@ -1400,7 +1440,11 @@ export const emails: Email[] = [
     subject: 'New security features rolling out for Google Drive',
     body: `<div style="font-family: 'Google Sans', Roboto, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
       <div style="background-color: #f8f9fa; padding: 24px; text-align: left; border-bottom: 1px solid #e0e0e0;">
+<<<<<<< HEAD
         <img src="https://www.gstatic.com/images/branding/googlelogo/2x/googlelogo_color_74x24dp.png" alt="Google" style="height: 24px; margin-right: 10px; vertical-align: middle;">
+=======
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/150px-Google_%22G%22_Logo.svg.png" alt="Google" style="width: 30px; margin-right: 10px; vertical-align: middle;">
+>>>>>>> 2cf5bc7565df977324be440446a4175e0d405224
         <span style="font-size: 20px; font-weight: 500; color: #5f6368; vertical-align: middle;">Workspace</span>
       </div>
       <div style="padding: 30px 25px; color: #202124;">

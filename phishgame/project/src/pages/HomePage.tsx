@@ -135,9 +135,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <p>© 2025 Phishing Defender. All rights reserved.</p>
             </div>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition">Privacy Policy</a>
-              <a href="#" className="hover:text-white transition">Terms of Service</a>
-              <a href="#" className="hover:text-white transition">Contact</a>
+              <a href="https://www.linkedin.com/in/abhiram-koushik-komanduri/" className="hover:text-white transition" target="_blank" rel="noopener noreferrer">Contact</a>
             </div>
           </div>
         </div>

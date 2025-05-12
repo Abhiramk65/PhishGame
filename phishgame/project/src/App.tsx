@@ -36,7 +36,19 @@ function AppContent() {
       {/* Only show footer on non-home pages since HomePage has its own footer */}
       {currentPath !== 'home' && (
         <footer className="bg-gray-800 text-white py-4 text-center">
-          <p>&copy; 2025 Phishing Awareness Game</p>
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+              <p>&copy; 2025 Phishing Awareness Game</p>
+              <a 
+                href="https://www.linkedin.com/in/abhiram-koushik-komanduri/" 
+                className="text-blue-300 hover:text-blue-200 transition"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contact
+              </a>
+            </div>
+          </div>
         </footer>
       )}
     </div>

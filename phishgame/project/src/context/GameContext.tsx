@@ -4,6 +4,16 @@ import { emails } from '../data/emails';
 import { mockUser } from '../data/users';
 import { achievementsList } from '../data/achievements';
 
+// Function to shuffle array using Fisher-Yates algorithm
+const shuffleArray = (array: any[]) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
 // Define the context shape
 interface GameContextProps {
   user: User;
@@ -35,7 +45,9 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
     details: []
   }
   });
-  const [availableEmails, setAvailableEmails] = useState<Email[]>(emails); // Initially, all emails are available
+  
+  // Initially, randomize all emails
+  const [availableEmails, setAvailableEmails] = useState<Email[]>(() => shuffleArray(emails));
 
   // Function to start the game
   const startGame = () => {
@@ -50,7 +62,8 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
   // Function to reset the game
   const resetGame = () => {
     setUser(mockUser);
-    setAvailableEmails(emails.map(email => ({ ...email, unread: true })));
+    // Shuffle emails again when resetting the game
+    setAvailableEmails(shuffleArray(emails.map(email => ({ ...email, unread: true }))));
     setGameState({
       isActive: false,
       isPaused: false,
@@ -116,104 +129,57 @@ export const GameProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
     }));
     
-    // Update user stats
-    setUser(prev => {
-      const updatedUser = {
-        ...prev,
-        totalEmailsReviewed: prev.totalEmailsReviewed + 1,
-        correctIdentifications: isCorrect ? prev.correctIdentifications + 1 : prev.correctIdentifications,
-        incorrectIdentifications: !isCorrect ? prev.incorrectIdentifications + 1 : prev.incorrectIdentifications,
-      };
+    // Update user score
+    setUser(prevUser => {
+      const newCorrectIdentifications = isCorrect 
+        ? prevUser.correctIdentifications + 1 
+        : prevUser.correctIdentifications;
       
-      // Update achievements (Level/Score based checks removed)
-      const achievements = [...prev.achievements];
-      // First identification achievement
-      if (isCorrect && identifiedEmail.isPhishing && !achievements[0].unlocked) {
-        achievements[0] = {
-          ...achievements[0],
-          unlocked: true,
-          unlockedAt: new Date().toISOString()
-        };
-      }
-      // Phishing Spotter (e.g., 5 correct phishing IDs)
-      if (isCorrect && identifiedEmail.isPhishing && updatedUser.correctIdentifications >= 5 && !achievements[1].unlocked) {
-        achievements[1] = {
-            ...achievements[1],
-            unlocked: true,
-            unlockedAt: new Date().toISOString()
-        };
-      }
-      // Accuracy Award (e.g., 90% accuracy after 10 emails)
-      if (updatedUser.totalEmailsReviewed >= 10 && (updatedUser.correctIdentifications / updatedUser.totalEmailsReviewed) >= 0.9 && !achievements[2].unlocked) {
-        achievements[2] = {
-            ...achievements[2],
-          unlocked: true,
-          unlockedAt: new Date().toISOString()
-        };
-      }
-      // Remove Achievement checks based on level/score
-      /*
-      // Security specialist achievement (Level based)
-      if (updatedUser.level >= 5 && !achievements[5].unlocked) {
-        achievements[5] = {
-          ...achievements[5],
-          unlocked: true,
-          unlockedAt: new Date().toISOString()
-        };
-      }
-      // Top defender achievement (Score based)
-      if (updatedUser.score >= 1000 && !achievements[6].unlocked) {
-        achievements[6] = {
-          ...achievements[6],
-          unlocked: true,
-          unlockedAt: new Date().toISOString()
-        };
-      }
-      */
-      // Add other non-score/level achievement checks here...
+      const newTotalEmailsReviewed = prevUser.totalEmailsReviewed + 1;
+      const newIncorrectIdentifications = !isCorrect
+        ? prevUser.incorrectIdentifications + 1
+        : prevUser.incorrectIdentifications;
       
       return {
-        ...updatedUser,
-        achievements
+        ...prevUser,
+        correctIdentifications: newCorrectIdentifications,
+        incorrectIdentifications: newIncorrectIdentifications,
+        totalEmailsReviewed: newTotalEmailsReviewed
       };
     });
     
-  }, [markEmailAsRead, availableEmails]); // Removed trackChallengeProgress from dependencies
-
-  // Removed calculatePoints function (using fixed value now)
+  }, [availableEmails, markEmailAsRead]);
   
-  // Helper function to generate feedback details (remains the same)
+  // Function to get feedback details
   const getFeedbackDetails = (email: Email, isCorrect: boolean): string[] => {
-    if (isCorrect) {
-      if (email.isPhishing) {
-        return ["Good catch! This email shows signs of being a phishing attempt."];
-      } else {
-        return ["Correct! This is a legitimate email."];
-      }
+    if (email.isPhishing) {
+      return email.phishingIndicators?.map(indicator => indicator.description) || [];
     } else {
-      if (email.isPhishing) {
-        return ["This is a phishing email. Always be cautious of suspicious emails."];
-      } else {
-        return ["This is actually a legitimate email. Be careful not to mark real emails as phishing."];
-      }
+      return ["This is a legitimate email with no phishing indicators."];
     }
   };
   
+  // Wrapped the below in a useEffect to ensure it only runs on mount
+  useEffect(() => {
+    // Automatically start the game when component mounts
+    startGame();
+  }, []);
+
+  // Context value object
+  const contextValue: GameContextProps = {
+    user,
+    gameState,
+    emails: availableEmails,
+    identifyEmail,
+    startGame,
+    pauseGame,
+    resetGame,
+    markEmailAsRead,
+    clearFeedback
+  };
+
   return (
-    <GameContext.Provider 
-      value={{
-        user,
-        gameState,
-        emails: availableEmails,
-        identifyEmail,
-        startGame,
-        pauseGame,
-        resetGame,
-        markEmailAsRead,
-        clearFeedback,
-        // Removed challenge functions from value
-      }}
-    >
+    <GameContext.Provider value={contextValue}>
       {children}
     </GameContext.Provider>
   );

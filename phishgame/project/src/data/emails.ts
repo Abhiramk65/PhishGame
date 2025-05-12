@@ -77,8 +77,8 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'You\'ve received a payment',
     body: `<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
-      <div style="background-color: #ffffff; padding: 20px; text-align: center; border-bottom: 1px solid #eaeaea;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/archive/b/b5/20210820095627%21PayPal_Logo_2014.svg" alt="PayPal" style="width: 100px;">
+      <div style="background-color: #ffffff; padding: 20px; text-align: center; border-bottom: 1px solid #e5e5e5;">
+        <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal" style="width: 100px;">
       </div>
       <div style="padding: 30px 25px; color: #2c2e2f; background-color: #f5f7fa;">
         <h2 style="margin-top: 0; color: #253b80; font-weight: 300; font-size: 24px;">You've got money!</h2>
@@ -262,7 +262,7 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'Unauthorized PayPal Login Attempt Detected',
     body: `<div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; max-width: 600px; margin: auto;">
-            <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.png" alt="PayPal Logo" style="width: 55px; height: 34px; margin-bottom: 20px;">
+            <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" alt="PayPal Logo" style="width: 55px; height: 34px; margin-bottom: 20px;">
             <h3 style="color: #003087; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Security Alert: Unusual Activity</h3>
             <p style="color: #333; margin-bottom: 15px;">Dear PayPal User,</p>
             <p style="color: #333; margin-bottom: 15px;">Our security systems have detected unusual login activity on your PayPal account from an unknown device with the following details:</p>
@@ -359,7 +359,7 @@ export const emails: Email[] = [
     subject: 'Your Bank of America statement is ready',
     body: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
       <div style="background-color: #e31836; padding: 20px; text-align: left;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bank_of_America_logo.svg/320px-Bank_of_America_logo.svg.png" alt="Bank of America" style="width: 200px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Bank_of_America_logo.svg" alt="Bank of America" style="width: 200px;">
       </div>
       <div style="padding: 30px 25px; color: #333;">
         <h2 style="margin-top: 0; font-size: 20px; color: #333; font-weight: 500;">Your statement is ready to view</h2>
@@ -569,7 +569,7 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'Suspicious Transaction Alert - Action Required',
     body: `<div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; max-width: 600px; margin: auto;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Bank_of_America_logo.svg/2560px-Bank_of_America_logo.svg.png" alt="Bank of America Logo" style="width: 150px; margin-bottom: 25px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Bank_of_America_logo.svg" alt="Bank of America Logo" style="width: 150px; margin-bottom: 25px;">
             <h3 style="color: #D81E05; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Fraud Alert</h3>
             <p style="color: #333; margin-bottom: 15px;">Dear Bank of America Customer,</p>
             <p style="color: #333; margin-bottom: 15px;">Our fraud detection system has flagged a potentially unauthorized transaction on your account:</p>
@@ -1035,7 +1035,7 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'Chase Security Alert: Verify Recent Transaction',
     body: `<div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; max-width: 600px; margin: auto;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Chase_logo.svg/150px-Chase_logo.svg.png" alt="Chase Logo" style="width: 100px; margin-bottom: 25px;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Chase_logo_2007.svg" alt="Chase Logo" style="width: 100px; margin-bottom: 25px;">
             <h3 style="color: #125BC0; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Account Security Alert</h3>
             <p style="color: #333; margin-bottom: 15px;">Dear Valued Chase Customer,</p>
             <p style="color: #333; margin-bottom: 15px;">For your protection, we have temporarily limited online access to your account. Our fraud monitoring system has detected unusual transaction activity:</p>

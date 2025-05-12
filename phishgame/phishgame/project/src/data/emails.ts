@@ -78,7 +78,7 @@ export const emails: Email[] = [
     subject: 'You\'ve received a payment',
     body: `<div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
       <div style="background-color: #ffffff; padding: 20px; text-align: center; border-bottom: 1px solid #eaeaea;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/archive/b/b5/20210820095627%21PayPal_Logo_2014.svg" alt="PayPal" style="width: 100px;">
+        <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-150px.png" alt="PayPal Logo" style="width: 100px; margin-bottom: 20px;">
       </div>
       <div style="padding: 30px 25px; color: #2c2e2f; background-color: #f5f7fa;">
         <h2 style="margin-top: 0; color: #253b80; font-weight: 300; font-size: 24px;">You've got money!</h2>
@@ -262,7 +262,7 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'Unauthorized PayPal Login Attempt Detected',
     body: `<div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; max-width: 600px; margin: auto;">
-            <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.png" alt="PayPal Logo" style="width: 55px; height: 34px; margin-bottom: 20px;">
+            <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-150px.png" alt="PayPal Logo" style="width: 55px; height: 34px; margin-bottom: 20px;">
             <h3 style="color: #003087; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Security Alert: Unusual Activity</h3>
             <p style="color: #333; margin-bottom: 15px;">Dear PayPal User,</p>
             <p style="color: #333; margin-bottom: 15px;">Our security systems have detected unusual login activity on your PayPal account from an unknown device with the following details:</p>
@@ -325,7 +325,7 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'Security Alert: Urgent Account Verification Required',
     body: `<div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; max-width: 600px; margin: auto;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Bank_of_America_logo.svg/2560px-Bank_of_America_logo.svg.png" alt="Bank of America Logo" style="width: 150px; margin-bottom: 25px;">
+            <img src="https://www.bankofamerica.com/content/images/ContextualSiteGraphics/LogoImage/en_US/logo-bank-of-america.png" alt="Bank of America Logo" style="width: 200px; margin-bottom: 25px;">
             <h3 style="color: #D81E05; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Account Security Notice</h3>
             <p style="color: #333; margin-bottom: 15px;">Dear valued customer,</p>
             <p style="color: #333; margin-bottom: 15px;">As part of our continuous security measures, we have detected unusual activity associated with your Bank of America account.</p>
@@ -358,14 +358,14 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'Your Bank of America statement is ready',
     body: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
-      <div style="background-color: #e31836; padding: 20px; text-align: left;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Bank_of_America_logo.svg/320px-Bank_of_America_logo.svg.png" alt="Bank of America" style="width: 200px;">
+      <div style="background-color: #e5e5e5; padding: 20px; text-align: left;">
+        <img src="https://www.bankofamerica.com/content/images/ContextualSiteGraphics/LogoImage/en_US/logo-bank-of-america.png" alt="Bank of America" style="width: 200px;">
       </div>
       <div style="padding: 30px 25px; color: #333;">
         <h2 style="margin-top: 0; font-size: 20px; color: #333; font-weight: 500;">Your statement is ready to view</h2>
         <p style="font-size: 16px; line-height: 1.5; margin-bottom: 25px;">Hello,</p>
         
-        <div style="background-color: #f8f8f8; border-left: 4px solid #e31836; padding: 15px; margin-bottom: 25px;">
+        <div style="background-color: #f8f8f8; border-left: 4px solid #e5e5e5; padding: 15px; margin-bottom: 25px;">
           <p style="margin: 0 0 10px; font-weight: bold;">Statement information:</p>
           <p style="margin: 0 0 5px;">Account: ••••••••<span style="font-weight: 600;">4567</span></p>
           <p style="margin: 0 0 5px;">Statement period: April 15 - May 15, 2025</p>
@@ -569,7 +569,7 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'Suspicious Transaction Alert - Action Required',
     body: `<div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; max-width: 600px; margin: auto;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Bank_of_America_logo.svg/2560px-Bank_of_America_logo.svg.png" alt="Bank of America Logo" style="width: 150px; margin-bottom: 25px;">
+            <img src="https://www.bankofamerica.com/content/images/ContextualSiteGraphics/LogoImage/en_US/logo-bank-of-america.png" alt="Bank of America Logo" style="width: 200px; margin-bottom: 25px;">
             <h3 style="color: #D81E05; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Fraud Alert</h3>
             <p style="color: #333; margin-bottom: 15px;">Dear Bank of America Customer,</p>
             <p style="color: #333; margin-bottom: 15px;">Our fraud detection system has flagged a potentially unauthorized transaction on your account:</p>
@@ -795,7 +795,7 @@ export const emails: Email[] = [
     subject: 'Important Information Regarding Your Account',
     body: `<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 4px; overflow: hidden;">
       <div style="background-color: #0f287f; padding: 25px; text-align: left;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Chase_logo_2007.svg/320px-Chase_logo_2007.svg.png" alt="Chase" style="width: 140px;">
+        <img src="https://www.chase.com/content/dam/chase-public/en/img/commercial-bank/chase-logo-nav.svg" alt="Chase" style="width: 140px;">
       </div>
       <div style="padding: 30px 25px; color: #333333;">
         <h2 style="margin-top: 0; font-size: 20px; color: #0f287f; font-weight: 600;">Policy Updates for Your Chase Account</h2>
@@ -949,7 +949,7 @@ export const emails: Email[] = [
         <table style="width: 100%;" cellpadding="0" cellspacing="0">
           <tr>
             <td style="vertical-align: middle; width: 50px;">
-              <img src="https://www.irs.gov/themes/custom/equity/logo.svg" alt="IRS Logo" style="width: 50px; height: 50px; display: block;">
+              <img src="https://www.irs.gov/pub/newsroom/irs-logo-small.png" alt="IRS Logo" style="width: 50px; height: 50px; display: block;">
             </td>
             <td style="vertical-align: middle; padding-left: 15px;">
               <h1 style="color: white; margin: 0; font-size: 18px; font-weight: 500;">Internal Revenue Service</h1>
@@ -1035,7 +1035,7 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'Chase Security Alert: Verify Recent Transaction',
     body: `<div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #ddd; max-width: 600px; margin: auto;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Chase_logo.svg/150px-Chase_logo.svg.png" alt="Chase Logo" style="width: 100px; margin-bottom: 25px;">
+            <img src="https://www.chase.com/content/dam/chase-public/en/img/commercial-bank/chase-logo-nav.svg" alt="Chase Logo" style="width: 100px; margin-bottom: 25px;">
             <h3 style="color: #125BC0; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-bottom: 20px;">Account Security Alert</h3>
             <p style="color: #333; margin-bottom: 15px;">Dear Valued Chase Customer,</p>
             <p style="color: #333; margin-bottom: 15px;">For your protection, we have temporarily limited online access to your account. Our fraud monitoring system has detected unusual transaction activity:</p>
@@ -1143,7 +1143,7 @@ export const emails: Email[] = [
     to: 'user@example.com',
     subject: 'IRS: Your Tax Refund Is Pending Additional Verification',
     body: `<div style="font-family: Arial, sans-serif; padding: 20px; border: 1px solid #a9a9a9; max-width: 600px; margin: auto; background-color: #ffffff;">
-            <img src="https://www.irs.gov/themes/custom/equity/logo.svg" alt="IRS Logo" style="width: 50px; height: 50px; margin-bottom: 20px;">
+            <img src="https://www.irs.gov/pub/newsroom/irs-logo-small.png" alt="IRS Logo" style="width: 50px; height: 50px; margin-bottom: 20px;">
             <h3 style="color: #003f87; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 20px;">Tax Refund Verification Required</h3>
             <p style="margin-bottom: 15px;">Dear Taxpayer,</p>
             <p style="margin-bottom: 15px;">The Internal Revenue Service has processed your 2024 tax return and determined that you are eligible for a refund of <strong>$1,873.42</strong>.</p>
@@ -1365,70 +1365,6 @@ export const emails: Email[] = [
       </div>
     </div>`,
     date: '2025-06-01T11:00:00',
-    hasAttachment: false,
-    isPhishing: false,
-    unread: true
-  },
-  {
-    id: 'expert-legit-4', // Google Workspace Security Update
-    from: { name: 'Google Workspace Updates', email: 'workspace-updates-noreply@google.com' },
-    to: 'user@example.com',
-    subject: 'New security features rolling out for Google Drive',
-    body: `<div style="font-family: 'Google Sans', Roboto, Arial, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden;">
-      <div style="background-color: #f8f9fa; padding: 24px; text-align: left; border-bottom: 1px solid #e0e0e0;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/150px-Google_%22G%22_Logo.svg.png" alt="Google" style="width: 30px; margin-right: 10px; vertical-align: middle;">
-        <span style="font-size: 20px; font-weight: 500; color: #5f6368; vertical-align: middle;">Workspace</span>
-      </div>
-      <div style="padding: 30px 25px; color: #202124;">
-        <h2 style="margin-top: 0; font-size: 20px; color: #202124; font-weight: 500;">New security features for Google Drive</h2>
-        <p style="font-size: 16px; line-height: 1.6; margin-bottom: 25px; color: #3c4043;">Hello Google Workspace Admin,</p>
-        
-        <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px; color: #3c4043;">We're enhancing security in Google Drive with new features for data loss prevention (DLP) and file sharing controls. These updates will begin rolling out to Rapid Release domains next week.</p>
-        
-        <div style="background-color: #f8f9fa; border-radius: 8px; padding: 20px; margin-bottom: 25px; border: 1px solid #dadce0;">
-          <h3 style="margin-top: 0; font-size: 16px; color: #202124; font-weight: 500; margin-bottom: 15px;">Security Enhancements Include:</h3>
-          
-          <div style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-            <div style="background-color: #1a73e8; width: 8px; height: 8px; border-radius: 50%; margin: 6px 10px 0 0;"></div>
-            <div>
-              <p style="margin: 0; font-weight: 500; font-size: 14px; color: #3c4043;">Enhanced DLP Rules</p>
-              <p style="margin: 5px 0 0; font-size: 14px; color: #5f6368;">Detect sensitive content with improved pattern matching</p>
-            </div>
-          </div>
-          
-          <div style="margin-bottom: 15px; display: flex; align-items: flex-start;">
-            <div style="background-color: #1a73e8; width: 8px; height: 8px; border-radius: 50%; margin: 6px 10px 0 0;"></div>
-            <div>
-              <p style="margin: 0; font-weight: 500; font-size: 14px; color: #3c4043;">Advanced Sharing Controls</p>
-              <p style="margin: 5px 0 0; font-size: 14px; color: #5f6368;">Set default sharing permissions at folder level</p>
-            </div>
-          </div>
-          
-          <div style="display: flex; align-items: flex-start;">
-            <div style="background-color: #1a73e8; width: 8px; height: 8px; border-radius: 50%; margin: 6px 10px 0 0;"></div>
-            <div>
-              <p style="margin: 0; font-weight: 500; font-size: 14px; color: #3c4043;">Security Dashboard Updates</p>
-              <p style="margin: 5px 0 0; font-size: 14px; color: #5f6368;">Improved visibility into external sharing and potential risks</p>
-            </div>
-          </div>
-        </div>
-        
-        <div style="background-color: #e8f0fe; border-radius: 8px; padding: 15px; margin-bottom: 25px; border-left: 4px solid #1a73e8;">
-          <p style="margin: 0; font-size: 14px; color: #1a73e8;">No immediate action is required, but familiarizing yourself with the new options is recommended.</p>
-        </div>
-        
-        <div style="text-align: center; margin: 30px 0 20px;">
-          <a href="https://workspaceupdates.googleblog.com/" style="display: inline-block; background-color: #1a73e8; color: white; text-decoration: none; padding: 10px 24px; border-radius: 4px; font-weight: 500; font-size: 14px;">View Detailed Updates</a>
-        </div>
-        
-        <p style="font-size: 16px; line-height: 1.6; margin-bottom: 0; color: #3c4043;">The Google Workspace Team</p>
-      </div>
-      <div style="background-color: #f8f9fa; padding: 20px; text-align: center; font-size: 12px; color: #5f6368; border-top: 1px solid #e0e0e0;">
-        <p style="margin: 0 0 10px;">© 2025 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA</p>
-        <p style="margin: 0;">You received this mandatory email to update you about important changes to Google Workspace.</p>
-      </div>
-    </div>`,
-    date: '2025-06-02T14:30:00',
     hasAttachment: false,
     isPhishing: false,
     unread: true
